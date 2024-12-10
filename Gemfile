@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
 group :jekyll_plugins do
+  gem "jekyll-theme-midnight"
   gem 'jekyll'
   gem 'jekyll-feed'
   gem 'jekyll-sitemap'
@@ -10,4 +11,5 @@ group :jekyll_plugins do
 end
 
 gem 'github-pages'
-gem 'jekyll-theme'
+# gem "jekyll-theme-midnight"
+# gem 'jekyll-theme'
