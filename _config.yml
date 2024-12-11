@@ -3,8 +3,10 @@
 #
 
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin  : "dark"
-# "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+minimal-mistakes:
+  skin: "dark"
+  # Available skins: "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
+  # For more information, see: https://mmistakes.github.io/minimal-mistakes/docs/configuration/
 
 # Name of your site (displayed in the header)
 name: Ajit Srikanth
