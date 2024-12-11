@@ -1,0 +1,12 @@
+---
+layout: post
+title:  "EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning"
+date:   2024-05-13 00:00:00 +00:00
+image: /images/edmp_demo.gif
+categories: research
+subtitle: "Best Poster Award"
+authors: "Kallol Saha*, Vishal Mandadi*, Jayaram Reddy*, <strong>Ajit Srikanth</strong>, Aditya Agarwal, Bipasha Sen, Arun Singh, Madhava Krishna"
+venue: "ICRA, 2024"
+site: https://ensemble-of-costs-diffusion.github.io/
+---
+
