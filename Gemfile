@@ -3,9 +3,9 @@
 source "https://rubygems.org"
 
 gem "github-pages", group: :jekyll_plugins
-gem "minimal-mistakes-jekyll"
+# gem "minimal-mistakes-jekyll"
 gem "rake"
-gem "jekyll-include-cache"
+# gem "jekyll-include-cache"
 
 group :jekyll_plugins do
     gem 'jekyll-feed'
@@ -13,7 +13,6 @@ group :jekyll_plugins do
     gem 'jekyll-redirect-from'
     gem 'jemoji'
     gem 'webrick', '~> 1.8'
-  end
-  
+end
 
 # gem "rails"

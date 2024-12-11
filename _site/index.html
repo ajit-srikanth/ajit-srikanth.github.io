@@ -1,21 +1,17 @@
----
-layout: default
----
-
 <!DOCTYPE HTML>
 <html lang="en">
 
 <head>
   
-  <title>{{ site.name }}</title>
+  <title>Ajit Srikanth</title>
 
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
-  <meta name="author" content="{{ site.name }}" />
+  <meta name="author" content="Ajit Srikanth" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="stylesheet" type="text/css" href="{{ site.baseurl }}/style.css" />
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+  <link rel="stylesheet" type="text/css" href="/style.css" />
+  <link rel="canonical" href="http://localhost:4000/">
   <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
   <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
 </head>
@@ -69,48 +65,35 @@ layout: default
         </table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <pstyle="margin-left: 30px;><i>(* denotes equal contribution. Click on publication to view more)</i></p>
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
+          
+          
+          
           <tr>
             <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+              <img src="/tn/images/edmp_demo.gif" alt="project image" style="width:auto; height:auto; max-width:100%;" />
             </td>
             <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <!-- <h3>{{post.title}}</h3> -->
-               <h3> <a href="{{post.site}}">{{post.title}}</a> </h3>
+              <!-- <h3>EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</h3> -->
+               <h3> <a href="https://ensemble-of-costs-diffusion.github.io/">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</a> </h3>
               <br>
-              {{post.authors}}
+              Kallol Saha*, Vishal Mandadi*, Jayaram Reddy*, <strong>Ajit Srikanth</strong>, Aditya Agarwal, Bipasha Sen, Arun Singh, Madhava Krishna
               <br>
-              <em>{{post.venue}}</em> <!-- , {{ post.date | date: "%Y" }}-->
+              <em>ICRA, 2024</em> <!-- , 2024-->
               <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> &bull;
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> &bull;
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> &bull;
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> &bull;
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> &bull;
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> &bull;
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> &bull;
-              {% endif %}
-              {{post.excerpt}}
+              
+              
+              
+              
+              
+              
+              
+              
+
             </td>
           </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
+          
+          
+          
         </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
@@ -136,57 +119,11 @@ layout: default
         <p><pstyle="margin-left: 30px;><i>(Click on project to view more)</i></p>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
 
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat != 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <h3>{{post.title}}</h3>
-              <br>
-              <em>{{post.categories}} {{post.course}}</em>
-              <!-- <br>
-              {{ post.date | date: "%Y-%m-%d" }} -->
-
-              <br>
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> &bull;
-              {% endif %}
-              {% if post.paper %}
-              <a href="{{post.paper}}">paper</a> &bull;
-              {% endif %}
-              {% if post.patent %}
-              <a href="{{post.patent}}">patent</a> &bull;
-              {% endif %}
-              {% if post.patent2 %}
-              <a href="{{post.patent2}}">patent #2</a> &bull;
-              {% endif %}
-              {% if post.patent3 %}
-              <a href="{{post.patent3}}">patent #3</a> &bull;
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> &bull;
-              {% endif %}
-              {% if post.video2 %}
-              <a href="{{post.video2}}">video #2</a> &bull;
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> &bull;
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> &bull;
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> &bull;
-              {% endif %}
-              {{ post.excerpt }}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
+          
+          
+          
+          
+          
         </table>
 
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
