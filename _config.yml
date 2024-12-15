@@ -74,6 +74,10 @@ kramdown:
 sass:
   style: :compressed # You might prefer to minify using :compressed
 
+
+excerpt_separator: <!--done-->
+
+
 # Use the following plug-ins
 
 # remote_theme: "mmistakes/minimal-mistakes"

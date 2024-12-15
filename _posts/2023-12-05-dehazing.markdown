@@ -1,0 +1,13 @@
+---
+layout: post
+title:  "Single image dehazing methods"
+# date:   2023-12-05 00:00:00 +00:00
+categories: project
+image: /images/blank_img.jpg
+# course: 
+# site: 
+---
+- Implementation of various haze removal and simultaneous depth extraction methods including Bayesian defogging, Single image haze removal using Dark Channel Prior, Single image haze removal using Colour Attenuation Prior.
+- Improved upon the DCP prior paper, by adding an additional preprocessing step which increases the restored image quality by utilizing CLAHE.
+- Extensively benchmarked these algorithms along with other classical methods without a degradation model, and analyised their performance.
+<!--done-->
