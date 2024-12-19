@@ -7,7 +7,7 @@ image: /images/blank_img.jpg
 # course: 
 # site: 
 ---
-- Automatically generating spatial audio (like Dolby Atmos) for scenes in movies/videos using video understanding. Designed a system that handles complex multi-speaker environments, identity switching and occlusions by leveraging lightweight tracking and facial recognition methods. 
-- Currently working on using scene understanding to generate better spatial audio even in the absence of proper visual cues. 
-
+- Automatically generating spatial audio (like Dolby Atmos) for movie scenes using video understanding.
+- Developed a system for complex multi-speaker environments with identity switching, and occlusions, using lightweight tracking, facial recognition and Active Speaker Detection techniques.
+- Currently working on improving spatial audio generation in scenes lacking proper visual cues through advanced scene understanding.
 <!--done-->

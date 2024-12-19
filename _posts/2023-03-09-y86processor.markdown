@@ -9,5 +9,5 @@ image: /images/blank_img.jpg
 ---
 - Designing and implementing sequential and pipelined Y86 ISA Processor in iverilog.
 - proper handling of data, structural, and control hazards.
-- A very basic compiler using python for converting Y86-64 assembly code to machine code for that processor.
+- A basic compiler using python for converting Y86-64 assembly code to machine code for that processor.
 <!--done-->

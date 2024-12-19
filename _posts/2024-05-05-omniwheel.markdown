@@ -7,7 +7,7 @@ image: /images/blank_img.jpg
 # course: 
 # site: 
 ---
-- Assembled a mecanum wheel robot with four Orange Planetary Gear DC Motor driven by two Cytron Mdds30 Dual 30A drivers
-- Integrated the Realsense T265 tracking camera and Realsense D455 depth camera along with voxfield for getting ESDFs
-- Implemented multiple planning algorithms (on the onboard intel NUC) including CEM, MPPI, and MPC using the ESDFs generated, and implemented basic PID for following the path generated
+- Assembled a mecanum wheel robot with four Planetary Gear DC Motor driven by two Cytron Mdds30.
+- Integrated and calibrated, a Realsense T265 tracking camera and a Realsense D455 depth camera, along with voxfield for obtaining ESDFs utilized for motion planning.
+- Implemented several planning algorithms, including CEM, MPPI, and MPC, on an onboard Intel NUC, utilizing ESDFs for collision costs; designed and implemented a PID controller for path-following.
 <!--done-->

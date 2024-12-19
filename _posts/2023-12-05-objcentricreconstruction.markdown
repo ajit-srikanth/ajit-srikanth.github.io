@@ -8,5 +8,5 @@ image: /images/blank_img.jpg
 # site: 
 ---
 - Designed a complete pipeline for 3D reconstruction of an object using a monocular fixed camera.
-- Used ICP, Bundle adjustment and a few pose graph optimization methods.
+- Optimized the initial 3D reconstruction with ICP, pose graph optimization, and Bundle Adjustment for efficient and accurate results; Proposed future enhancements by utilizing NeRFs to learn appearance geometry.
 <!--done-->

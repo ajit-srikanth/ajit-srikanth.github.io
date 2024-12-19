@@ -7,7 +7,7 @@ image: /images/blank_img.jpg
 # course: 
 # site: 
 ---
-- Proposed an alternative BERT-based architecture to Contract-NLI-BERT, for performing NLI and Evidence inference for Legal contracts.
-- achieved a minor performance boost over the baseline attributed to the changed architecture which improves the handling long-term dependencies between evidence-spans.
+- Proposed a two-step BERT-based architecture, improving NLI and evidence inference for legal contracts.
+- Improved handling of long-term dependencies in evidence-spans, and context size limits , due to our modified architecture and ensemble approach, achieving higher accuracy than the baseline ContractNLI-BERT.
 
 <!--done-->

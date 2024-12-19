@@ -7,7 +7,7 @@ image: /images/blank_img.jpg
 # course: 
 # site: 
 ---
-- Designed a walker robot with 8 klann linkage mechanims for legs, along with complete kinematics and dynamics analysis with consideration for different gaits for different purposes, on Fusion360.
-- Fabricated and assembled the designed mechanism by laser-cutting acrylic sheets for the links, chassis and 3D printed the joints and couplers.
+- Designed a walker robot with 8 klann linkage mechanims for legs, performing comprehensive kinematics and dynamics analysis with consideration for different gaits for different purposes, on Fusion360.
+- Built the mechanism using laser-cut acrylic for links and chassis, with 3D-printed joints and couplers.
 - Wrote a simple controller to control the two dynamixel XL330 motors using U2D2 for communication.
 <!--done-->
