@@ -5,7 +5,7 @@ title:  "ASAC- Assisted Spatial Audio Construction"
 categories: project
 image: /images/blank_img.jpg
 # course: 
-# site: 
+site: https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EXHs6qwKLcRLihxNEN74GWMBh7RMKx_rxJVVNgvzx5Y16w?e=se7HKs
 ---
 - Automatically generating spatial audio (like Dolby Atmos) for movie scenes using video understanding.
 - Developed a system for complex multi-speaker environments with identity switching, and occlusions, using lightweight tracking, facial recognition and Active Speaker Detection techniques.

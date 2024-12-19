@@ -5,7 +5,7 @@ title:  "Y86 ISA Processor"
 categories: project
 image: /images/blank_img.jpg
 # course: 
-# site: 
+site: https://github.com/ajit-srikanth/Y86-Processor/blob/master/IPA2023_Project_Report.pdf
 ---
 - Designing and implementing sequential and pipelined Y86 ISA Processor in iverilog.
 - proper handling of data, structural, and control hazards.

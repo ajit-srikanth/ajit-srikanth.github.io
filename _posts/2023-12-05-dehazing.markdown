@@ -5,7 +5,7 @@ title:  "Single image dehazing methods"
 categories: project
 image: /images/blank_img.jpg
 # course: 
-# site: 
+site: https://github.com/ajit-srikanth/Haze-Removal-Methods/blob/master/DIP_Project_Report_compressed.pdf
 ---
 - Implementation of various haze removal methods including Bayesian defogging, Single image haze removal using Dark Channel Prior, Single image haze removal using Colour Attenuation Prior.
 - Improved upon the DCP prior paper, by adding an additional preprocessing step which increases the restored image quality by utilizing CLAHE; Demonstrated their use in stream tasks like object detection.
