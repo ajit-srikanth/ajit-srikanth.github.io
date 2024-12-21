@@ -3,7 +3,7 @@ layout: post
 title:  "8 legged Klann walker robot"
 # date:   2024-05-25 00:00:00 +00:00
 categories: project
-image: /images/blank_img.jpg
+image: /images/msd.png
 # course: 
 # site: 
 ---

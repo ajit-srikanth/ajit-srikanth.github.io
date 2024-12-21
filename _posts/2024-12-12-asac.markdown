@@ -3,7 +3,7 @@ layout: post
 title:  "ASAC- Assisted Spatial Audio Construction"
 # date:   2024-05-03 00:00:00 +00:00 
 categories: project
-image: /images/blank_img.jpg
+image: /images/asac.png
 link: https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EXHs6qwKLcRLihxNEN74GWMBh7RMKx_rxJVVNgvzx5Y16w?e=se7HKs
 # course: 
 # site: 

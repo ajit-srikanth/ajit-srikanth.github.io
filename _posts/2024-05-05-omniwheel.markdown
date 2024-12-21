@@ -3,7 +3,7 @@ layout: post
 title:  "Autonomous Omni-drive robot"
 # date:   2024-05-05 00:00:00 +00:00
 categories: project
-image: /images/blank_img.jpg
+image: /images/rpn.png
 # course: 
 # site: 
 ---

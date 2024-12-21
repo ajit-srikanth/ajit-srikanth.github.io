@@ -3,7 +3,7 @@ layout: post
 title:  "Y86 ISA Processor"
 # date:   2023-03-09 00:00:00 +00:00
 categories: project
-image: /images/blank_img.jpg
+image: /images/ipa_inverted.png
 # course: 
 # site:
 link: https://github.com/ajit-srikanth/Y86-Processor/blob/master/IPA2023_Project_Report.pdf

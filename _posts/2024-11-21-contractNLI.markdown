@@ -3,7 +3,7 @@ layout: post
 title:  "Contract-NLI"
 # date:   2024-11-21 00:00:00 +00:00
 categories: project
-image: /images/blank_img.jpg
+image: /images/anlp.png
 # course: 
 link: https://github.com/ajit-srikanth/Contract-NLI/blob/master/Report.pdf
 ---
