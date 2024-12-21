@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Object centric pose reconstruction"
+title:  "Object centric reconstruction"
 # date:   2023-12-05 00:00:00 +00:00
 categories: project
 image: /images/mr.png
