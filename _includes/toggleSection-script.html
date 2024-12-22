@@ -1,0 +1,14 @@
+<script>
+  function toggleSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    var button = document.querySelector(`button[onclick="toggleSection('${sectionId}')"]`);
+    
+    if (section.classList.contains('hidden-section')) {
+      section.classList.remove('hidden-section');
+      button.textContent = 'view less';
+    } else {
+      section.classList.add('hidden-section');
+      button.textContent = 'view more';
+    }
+  }
+</script>
