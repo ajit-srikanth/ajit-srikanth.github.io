@@ -1,11 +1,11 @@
 <script>
-  function toggleSection(sectionId, buttonText) {
+  function toggleSection(sectionId, buttonText, closebuttonText) {
   var section = document.getElementById(sectionId);
-  var button = document.querySelector(`button[onclick="toggleSection('${sectionId}', '${buttonText}')"]`);
+  var button = document.querySelector(`button[onclick="toggleSection('${sectionId}', '${buttonText}', '${closebuttonText}')"]`);
   
   if (section.classList.contains('hidden-section')) {
     section.classList.remove('hidden-section');
-    button.textContent = 'view less';
+    button.textContent = closebuttonText;
     
     section.appendChild(button);
   } else {
