@@ -65,7 +65,7 @@
         <button class="reveal-btn" onclick="toggleSection('more-section', 'view more')">view more</button>
 
         <div id="more-section" class="hidden-section">
-          <!-- <h3>More</h3> -->
+          <h3>More</h3>
           <p>
             I'd like to say I work on robot learning.
             My long-term research goal is to create agents which can learn from their (or some other embodiment's)
@@ -558,18 +558,23 @@
           </table>
 
           <script>
-  function toggleSection(sectionId, text) {
-    var section = document.getElementById(sectionId);
-    var button = document.querySelector(`button[onclick="toggleSection('${sectionId}', '${text}')"]`);
+  function toggleSection(sectionId, buttonText) {
+  var section = document.getElementById(sectionId);
+  var button = document.querySelector(`button[onclick="toggleSection('${sectionId}', '${buttonText}')"]`);
+  
+  if (section.classList.contains('hidden-section')) {
+    section.classList.remove('hidden-section');
+    button.textContent = 'view less';
     
-    if (section.classList.contains('hidden-section')) {
-      section.classList.remove('hidden-section');
-      button.textContent = 'view less';
-    } else {
-      section.classList.add('hidden-section');
-      button.textContent = text;
-    }
+    section.appendChild(button);
+  } else {
+    section.classList.add('hidden-section');
+    button.textContent = buttonText;
+    
+    section.parentNode.insertBefore(button, section);
   }
+}
+
 </script>
 </table>
 </td>
