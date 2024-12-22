@@ -8,18 +8,18 @@ layout: default
 <head>
 
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-R6SXMKZJE4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-R6SXMKZJE4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-  gtag('config', 'G-R6SXMKZJE4');
-</script>
+    gtag('config', 'G-R6SXMKZJE4');
+  </script>
 
 
-<title>{{ site.name }}</title>
-    **under development (both me and the website)
+  <title>{{ site.name }}</title>
+  **under development (both me and the website)
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
 
   <meta name="author" content="{{ site.name }}" />
@@ -32,29 +32,34 @@ layout: default
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+  <table
+    style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
     <tr style="padding:0px">
       <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table
+          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr style="padding:0px">
             <td style="padding:2.5%;width:60%;vertical-align:middle">
               <h1>
                 Ajit Srikanth
               </h1>
-              <p>I am a Pre-Final year B.Tech with MS by research (dual degree) student at IIIT-Hyderabad. 
-                 I'm currently an undergraduate researcher at the Robotics Research Center (RRC) @ IIIT-Hyderabad, 
-                 advised by Prof <a href ="https://scholar.google.co.in/citations?user=QDuPGHwAAAAJ&hl=en">K. Madhava Krishna.</a>
+              <p>I am a Pre-Final year B.Tech with MS by research (dual degree) student at IIIT-Hyderabad.
+                I'm currently an undergraduate researcher at the Robotics Research Center (RRC) @ IIIT-Hyderabad,
+                advised by Prof <a href="https://scholar.google.co.in/citations?user=QDuPGHwAAAAJ&hl=en">K. Madhava
+                  Krishna.</a>
               </p>
-                
+
               </p>
-               
+
               <p style="text-align:center">
                 <!-- <a target="_blank" href="mailto:ajitsrikanth@gmail.com">Email</a> &nbsp;/&nbsp; -->
                 <a target="_blank" href="mailto:ajit.srikanth@research.iiit.ac.in">Email</a> &nbsp;/&nbsp;
                 <a href="https://github.com/ajit-srikanth">GitHub</a> &nbsp;/&nbsp;
                 <a href="https://scholar.google.com/citations?user=2yO8kZoAAAAJ">Google Scholar</a> &nbsp;/&nbsp;
                 <a href="https://www.linkedin.com/in/ajitsrikanth"> LinkedIn </a> &nbsp;/&nbsp;
-                <a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/ETDael2rSeNNnmk9GNOkF0oB66dfYQ8z52raIJlTr4_ryQ?e=WsIUGe"> CV </a>
+                <a
+                  href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/ETDael2rSeNNnmk9GNOkF0oB66dfYQ8z52raIJlTr4_ryQ?e=WsIUGe">
+                  CV </a>
 
               </p>
             </td>
@@ -63,31 +68,39 @@ layout: default
             </td>
           </tr>
         </table>
-        
-        <button class="reveal-btn" onclick="toggleSection('more-section')">view more</button>
+
+        <button class="reveal-btn" onclick="toggleSection('more-section', 'view more')">view more</button>
 
         <div id="more-section" class="hidden-section">
-            <!-- <h3>More</h3> -->
-            <p>
-                I'd like to say I work on robot learning. 
-                My long-term research goal is to create agents which can learn from their (or some other embodiment's) 
-                prior experiences to perform tasks, and also being able to adapt to new tasks
-                (and environments), without task-specific data.
-            </p>
-            <p>
-                Although a bit cliche, I wish to work towards a future where humans and robots coexist, with the robots assiting humans not only in dangerous tasks,
-                but also boring (subjective) everyday tasks like cleaning, cooking, fetching, blah blah blah. 
-                Well, this will also enable them to serve as support systems for humans and also scale up accessibility to resources.
-            </p>
-            <p>
-                Feel free to reach out to me to for any discussions, collaborations or just to say hi. Most of my social media handles are just "ajitsrikanth"  "(.*?)" . I'm always down for an intresting conversation. If you dont know what to talk about, we can talk about Robotics in general, 
-                Robot Learning, Reinforcement Learning,  Motion Planning, Foundation Models, Computer Vision, Deep Learning / ML, 
-                Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world domination(?), or literally anything.
-            </p>    
+          <!-- <h3>More</h3> -->
+          <p>
+            I'd like to say I work on robot learning.
+            My long-term research goal is to create agents which can learn from their (or some other embodiment's)
+            prior experiences to perform tasks, and also being able to adapt to new tasks
+            (and environments), without task-specific data.
+          </p>
+          <p>
+            Although a bit cliche, I wish to work towards a future where humans and robots coexist, with the robots
+            assiting humans not only in dangerous tasks,
+            but also boring (subjective) everyday tasks like cleaning, cooking, fetching, blah blah blah.
+            Well, this will also enable them to serve as support systems for humans and also scale up accessibility to
+            resources.
+          </p>
+          <p>
+            Feel free to reach out to me to for any discussions, collaborations or just to say hi. Most of my social
+            media handles are just "ajitsrikanth" "(.*?)" . I'm always down for an intresting conversation. If you dont
+            know what to talk about, we can talk about Robotics in general,
+            Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning /
+            ML,
+            Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
+            wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
+            domination(?), or literally anything.
+          </p>
         </div>
 
         <!-- insert a line to divide sections -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+        <table
+          style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
           <tr>
             <td style="padding:0px">
               <hr>
@@ -95,198 +108,220 @@ layout: default
           </tr>
 
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:1.5%;width:100%;vertical-align:middle">
-              <h1>Publications</h1>
-            </td>
-          </tr>
-        </table>
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <pstyle="margin-left: 30px;><i>(* denotes equal contribution. Click on publication to view more)</i></p>
-          {% for post in site.posts %}
-          {% for cat in post.categories %}
-          {% if cat == 'research' %}
-          <tr>
-            <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-              <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-            </td>
-            <td style="padding:2.5%;width:75%;vertical-align:middle">
-              <!-- <h3>{{post.title}}</h3> -->
-               <h3> <a href="{{post.site}}">{{post.title}}</a> </h3>
-              <br>
-              {{post.authors}}
-              <br>
-              <em>{{post.venue}}</em> <!-- , {{ post.date | date: "%Y" }}-->
-              <br>
-              {% if post.arxiv %}
-              <a href="{{post.arxiv}}">arxiv</a> &bull;
-              {% endif %}
-              {% if post.video %}
-              <a href="{{post.video}}">video</a> &bull;
-              {% endif %}
-              {% if post.code %}
-              <a href="{{post.code}}">code</a> &bull;
-              {% endif %}
-              {% if post.poster %}
-              <a href="{{post.poster}}">poster</a> &bull;
-              {% endif %}
-              {% if post.slides %}
-              <a href="{{post.slides}}">slides</a> &bull;
-              {% endif %}
-              {% if post.website %}
-              <a href="{{post.website}}">website</a> &bull;
-              {% endif %}
-              {% if post.youtube %}
-              <a href="{{post.youtube}}">youtube</a> &bull;
-              {% endif %}
-              {{post.excerpt}}
-            </td>
-          </tr>
-          {% endif %}
-          {% endfor %}
-          {% endfor %}
-        </table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-
-        <!-- insert a line to divide sections -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <hr>
-            </td>
-          </tr>
-
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:2.5%;width:100%;vertical-align:middle">
-              <h2 style="text-align:center;">Projects</h2>
-            </td>
-          </tr>
-        </table>
-
-
-        <button class="reveal-btn" onclick="toggleSection('more-projects')">view more</button>
-        <div id='more-projects' class="hidden-section">
-
-          <p><pstyle="margin-left: 30px;><i>(Click on project to view more)</i></p>
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-            {% for post in site.posts %}
-            {% for cat in post.categories %}
-            {% if cat != 'research' %}
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tr>
-              <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
-              </td>
-              <td style="padding:2.5%;width:75%;vertical-align:middle">
-                <h3><a href="{{post.link}}">{{post.title}}</a></h3>
-                <br>
-                <em>{{post.categories}} {{post.course}}</em>
-                <!-- <br>
-                {{ post.date | date: "%Y-%m-%d" }} -->
-
-                <br>
-                {% if post.website %}
-                <a href="{{post.website}}">website</a> &bull;
-                {% endif %}
-                {% if post.paper %}
-                <a href="{{post.paper}}">paper</a> &bull;
-                {% endif %}
-                {% if post.patent %}
-                <a href="{{post.patent}}">patent</a> &bull;
-                {% endif %}
-                {% if post.patent2 %}
-                <a href="{{post.patent2}}">patent #2</a> &bull;
-                {% endif %}
-                {% if post.patent3 %}
-                <a href="{{post.patent3}}">patent #3</a> &bull;
-                {% endif %}
-                {% if post.video %}
-                <a href="{{post.video}}">video</a> &bull;
-                {% endif %}
-                {% if post.video2 %}
-                <a href="{{post.video2}}">video #2</a> &bull;
-                {% endif %}
-                {% if post.code %}
-                <a href="{{post.code}}">code</a> &bull;
-                {% endif %}
-                {% if post.poster %}
-                <a href="{{post.poster}}">poster</a> &bull;
-                {% endif %}
-                {% if post.slides %}
-                <a href="{{post.slides}}">slides</a> &bull;
-                {% endif %}
-                {{ post.excerpt }}
+              <td style="padding:1.5%;width:100%;vertical-align:middle">
+                <h1>Publications</h1>
               </td>
             </tr>
-            {% endif %}
-            {% endfor %}
-            {% endfor %}
           </table>
-        </div>
-
-        <!-- insert a line to divide sections -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <hr>
-            </td>
-          </tr>
 
 
-        
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+            <pstyle="margin-left: 30px;><i>(* denotes equal contribution. Click on publication to view more)</i></p>
+              {% for post in site.posts %}
+              {% for cat in post.categories %}
+              {% if cat == 'research' %}
+              <tr>
+                <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+                  <img src="/tn{{post.image}}" alt="project image" style="width:auto; height:auto; max-width:100%;" />
+                </td>
+                <td style="padding:2.5%;width:75%;vertical-align:middle">
+                  <!-- <h3>{{post.title}}</h3> -->
+                  <h3> <a href="{{post.site}}">{{post.title}}</a> </h3>
+                  <br>
+                  {{post.authors}}
+                  <br>
+                  <em>{{post.venue}}</em> <!-- , {{ post.date | date: "%Y" }}-->
+                  <br>
+                  {% if post.arxiv %}
+                  <a href="{{post.arxiv}}">arxiv</a> &bull;
+                  {% endif %}
+                  {% if post.video %}
+                  <a href="{{post.video}}">video</a> &bull;
+                  {% endif %}
+                  {% if post.code %}
+                  <a href="{{post.code}}">code</a> &bull;
+                  {% endif %}
+                  {% if post.poster %}
+                  <a href="{{post.poster}}">poster</a> &bull;
+                  {% endif %}
+                  {% if post.slides %}
+                  <a href="{{post.slides}}">slides</a> &bull;
+                  {% endif %}
+                  {% if post.website %}
+                  <a href="{{post.website}}">website</a> &bull;
+                  {% endif %}
+                  {% if post.youtube %}
+                  <a href="{{post.youtube}}">youtube</a> &bull;
+                  {% endif %}
+                  {{post.excerpt}}
+                </td>
+              </tr>
+              {% endif %}
+              {% endfor %}
+              {% endfor %}
+          </table>
+          <hr>
+          
+          <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tr>
               <td style="padding:2.5%;width:100%;vertical-align:middle">
-                <h2 style="text-align:center;">Teaching</h2>
+
+                <!-- insert a line to divide sections -->
+                <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                  <tr>
+                    <td style="padding:0px">
+                      <hr>
+                    </td>
+                  </tr>
+                </table> -->
+              
+              <button class="reveal-btn" onclick="toggleSection('more-projects', 'view projects')">view projects</button>
+                
+              <div id='more-projects' class="hidden-section">
+
+                
+
+                    <table
+                      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                      <tr>
+                        <td style="padding:2.5%;width:100%;vertical-align:middle">
+                          <h2 style="text-align:center; margin-bottom:0px;">Projects</h2>
+                        </td>
+                      </tr>
+                    </table>
+                    
+                    <p style="margin-top:0px;"><i>(Click on project to view more)</i></p>
+
+
+
+                    <table
+                      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+
+                      {% for post in site.posts %}
+                      {% for cat in post.categories %}
+                      {% if cat != 'research' %}
+                      <tr>
+                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
+                          <img src="/tn{{post.image}}" alt="project image"
+                            style="width:auto; height:auto; max-width:100%;" />
+                        </td>
+                        <td style="padding:2.5%;width:75%;vertical-align:middle">
+                          <h3><a href="{{post.link}}">{{post.title}}</a></h3>
+                          <br>
+                          <em>{{post.categories}} {{post.course}}</em>
+                          <!-- <br>
+                          {{ post.date | date: "%Y-%m-%d" }} -->
+
+                          <br>
+                          {% if post.website %}
+                          <a href="{{post.website}}">website</a> &bull;
+                          {% endif %}
+                          {% if post.paper %}
+                          <a href="{{post.paper}}">paper</a> &bull;
+                          {% endif %}
+                          {% if post.patent %}
+                          <a href="{{post.patent}}">patent</a> &bull;
+                          {% endif %}
+                          {% if post.patent2 %}
+                          <a href="{{post.patent2}}">patent #2</a> &bull;
+                          {% endif %}
+                          {% if post.patent3 %}
+                          <a href="{{post.patent3}}">patent #3</a> &bull;
+                          {% endif %}
+                          {% if post.video %}
+                          <a href="{{post.video}}">video</a> &bull;
+                          {% endif %}
+                          {% if post.video2 %}
+                          <a href="{{post.video2}}">video #2</a> &bull;
+                          {% endif %}
+                          {% if post.code %}
+                          <a href="{{post.code}}">code</a> &bull;
+                          {% endif %}
+                          {% if post.poster %}
+                          <a href="{{post.poster}}">poster</a> &bull;
+                          {% endif %}
+                          {% if post.slides %}
+                          <a href="{{post.slides}}">slides</a> &bull;
+                          {% endif %}
+                          {{ post.excerpt }}
+                        </td>
+                      </tr>
+                      {% endif %}
+                      {% endfor %}
+                      {% endfor %}
+                    </table>
+
+                    <!-- insert a line to divide sections -->
+                    <table
+                      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                      <tr>
+                        <td style="padding:0px">
+                          <hr>
+                        </td>
+                      </tr>
+                    </table>
+
+
+                  </div>
+
+                  <div id='teaching'>
+                    <table
+                      style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                      <tr>
+                        <td style="padding:2.5%;width:100%;vertical-align:middle">
+                          <h2 style="text-align:center;">Teaching</h2>
+                        </td>
+                      </tr>
+                    </table>
+
+                    <p>
+                    <ul>
+                      <li>
+                        I taught two lectures at for the course CS7.503 Mobile Robotics (Monsoon 2024) at IIIT-Hyderabad
+                        by Prof. K. Madhava Krishna,
+                        where I covered the basics of Transformations and Quaternions representations, and then ICP
+                        slam.
+                      </li>
+                      <li>
+                        I served as a teaching assistant for the course EC2.204 Intro to Processor Architecture (Spring
+                        2024) at IIIT-Hyderabad by Prof. Deepak Gangadharan, with around 100 students, where I prepared
+                        assignments, and conducted tutorials on topics including: Verilog HDL programming, X86 ISA,
+                        Sequential and pipelined architectures and hazard handling.
+                        Further, I helped design and mentor the students for the final project, which was to design a
+                        Y86 ISA pipelined processor, with proper branch prediction and hazard handling.
+                      </li>
+
+                    </ul>
+                    </p>
+
+                  </div>
+
+
+
+                  <table
+                    style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+                    <tr>
+                      <td style="padding:0px">
+                        <br>
+                        <p style="text-align:center;font-size:small;">
+                          Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon
+                            Barron's website</a>
+                        </p>
+                      </td>
+                    </tr>
+                  </table>
+
+
               </td>
             </tr>
           </table>
 
-          <p>
-            <ul>
-                <li>
-                    I taught two lectures at for the course CS7.503	Mobile Robotics (Monsoon 2024) at IIIT-Hyderabad by Prof. K. Madhava Krishna, 
-                    where I covered the basics of Transformations and Quaternions representations, and then ICP slam.
-                </li>
-                <li>
-                    I served as a teaching assistant for the course EC2.204	Intro to Processor Architecture (Spring 2024) at IIIT-Hyderabad by Prof. Deepak Gangadharan, with around 100 students, where I prepared 
-                    assignments, and conducted tutorials on topics including: Verilog HDL programming, X86 ISA, Sequential and pipelined architectures and hazard handling.
-                    Further, I helped design and mentor the students for the final project, which was to design a Y86 ISA pipelined processor, with proper branch prediction and hazard handling.
-                </li>
-                
-            </ul>
-        </p>
-
-
-
-
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:center;font-size:small;">
-                Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon Barron's website</a>
-              </p>
-            </td>
-          </tr>
-        </table>
-
-
-      </td>
-    </tr>
-  </table>
-
-  {% include toggleSection-script.html %}
+          {% include toggleSection-script.html %}
 </body>
 
 </html>
