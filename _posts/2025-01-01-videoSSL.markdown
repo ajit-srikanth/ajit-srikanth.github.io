@@ -1,0 +1,16 @@
+---
+layout: post
+title:  "Sound Source Localization on videos"
+# date:   2024-05-03 00:00:00 +00:00 
+categories: project
+image: /images/videossldemovid.gif
+link: https://docs.google.com/presentation/d/11zAPW27YTdI6odJSXNLi3RQVpkWWkaqMU83LPta0O1c/edit?slide=id.g35359ca95d3_9_114#slide=id.g35359ca95d3_9_114
+# course: 
+# site: 
+---
+- Developed a system that combines semantic and temporal information to localize sound sources in videos
+- Audio-visual grounding by aligning a large Vison-Language Model’s embeddings with audio embeddings (similar to ”Can
+CLIP Help Sound Source Localization?”)
+- Addresses video challenges, including unidentified frames and instance disambiguation through our custom temporal
+module that utilizes a audio-motion transformer
+<!--done-->
