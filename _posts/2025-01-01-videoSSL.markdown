@@ -4,7 +4,8 @@ title:  "Sound Source Localization on videos"
 # date:   2024-05-03 00:00:00 +00:00 
 categories: project
 image: /images/videossldemovid.gif
-link: https://docs.google.com/presentation/d/11zAPW27YTdI6odJSXNLi3RQVpkWWkaqMU83LPta0O1c/edit?slide=id.g35359ca95d3_9_114#slide=id.g35359ca95d3_9_114
+link: https://iiithydresearch-my.sharepoint.com/:p:/g/personal/ajit_srikanth_research_iiit_ac_in/EauQjkJpix1OvJQXlCAYRQcBk20d0z429PPUPN0DQQjBeA?e=FcEfKN
+# https://docs.google.com/presentation/d/11zAPW27YTdI6odJSXNLi3RQVpkWWkaqMU83LPta0O1c/edit?slide=id.g35359ca95d3_9_114#slide=id.g35359ca95d3_9_114
 # course: 
 # site: 
 ---
