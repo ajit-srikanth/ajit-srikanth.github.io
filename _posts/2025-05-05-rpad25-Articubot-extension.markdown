@@ -3,7 +3,7 @@ layout: post
 title:  "Articubot extension"
 # date:   2023-03-09 00:00:00 +00:00
 categories: project
-image: /images/very_compressed_small_interesting_working_demo
+image: /images/very_compressed_small_interesting_working_demo.gif
 # course: 
 # site:
 ---
