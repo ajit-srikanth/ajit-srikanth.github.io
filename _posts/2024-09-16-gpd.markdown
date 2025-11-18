@@ -5,7 +5,7 @@ date:   2024-09-16 00:00:00 +00:00
 image: /images/gpd_teaser.gif
 categories: research
 authors: "<strong>Ajit Srikanth*</strong>, Parth Mahajan*, Kallol Saha*, Vishal Mandadi*, Pranjal Paul, Pawan Wadhwani, Brojeshwar Bhowmick, Arun Singh, and Madhava Krishna"
-venue: "Under Review @ ICRA, 2025"
+venue: "CASE, 2025"
 site: http://guided-polynomial-diffusion.github.io/
 ---
 
