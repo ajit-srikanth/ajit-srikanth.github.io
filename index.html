@@ -114,31 +114,7 @@ layout: default
               </div>
             </div>
 
-            <!-- Modal for this Publication -->
-            <div id="modal-{{ post.id | slugify }}" class="modal-overlay" onclick="closeModal('{{ post.id | slugify }}')">
-              <div class="modal-content" onclick="event.stopPropagation()">
-                <button class="modal-close" onclick="closeModal('{{ post.id | slugify }}')"><i data-feather="x"></i></button>
-                {% if post.image %}
-                  <img src="{{ site.baseurl }}{{ post.image }}" alt="paper teaser" class="modal-img" />
-                {% endif %}
-                <h3 class="modal-title">{{ post.title }}</h3>
-                <div class="modal-venue">{{ post.venue }}</div>
-                <div class="modal-authors">
-                  <strong>Authors:</strong> {{ post.authors }}
-                  <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; font-style: italic;">* denotes equal contribution</span>
-                </div>
-                <div class="modal-pills">
-                  {% if post.website %}<a href="{{ post.website }}" target="_blank"><i data-feather="globe" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>site</a>{% endif %}
-                  {% if post.paper %}<a href="{{ post.paper }}" target="_blank"><i data-feather="file-text" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>paper</a>{% endif %}
-                  {% if post.code %}<a href="{{ post.code }}" target="_blank"><i data-feather="github" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>code</a>{% endif %}
-                  {% if post.video %}<a href="{{ post.video }}" target="_blank"><i data-feather="youtube" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>video</a>{% endif %}
-                  {% if post.link %}<a href="{{ post.link }}" target="_blank"><i data-feather="link" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>link</a>{% endif %}
-                </div>
-                <div class="modal-abstract">
-                  {{ post.content }}
-                </div>
-              </div>
-            </div>
+
             {% endif %}
           {% endfor %}
         </div>
@@ -233,4 +209,36 @@ layout: default
         </p>
       </section>
 
+    </div>
+
+    <!-- Modals rendered outside of .page containers to avoid backdrop-filter CSS containment issues -->
+    <div id="modals-container">
+      {% for post in site.posts %}
+        {% if post.categories contains 'research' %}
+          <div id="modal-{{ post.id | slugify }}" class="modal-overlay" onclick="closeModal('{{ post.id | slugify }}')">
+            <div class="modal-content" onclick="event.stopPropagation()">
+              <button class="modal-close" onclick="closeModal('{{ post.id | slugify }}')"><i data-feather="x"></i></button>
+              {% if post.image %}
+                <img src="{{ site.baseurl }}{{ post.image }}" alt="paper teaser" class="modal-img" />
+              {% endif %}
+              <h3 class="modal-title">{{ post.title }}</h3>
+              <div class="modal-venue">{{ post.venue }}</div>
+              <div class="modal-authors">
+                <strong>Authors:</strong> {{ post.authors }}
+                <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; font-style: italic;">* denotes equal contribution</span>
+              </div>
+              <div class="modal-pills">
+                {% if post.website %}<a href="{{ post.website }}" target="_blank"><i data-feather="globe" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>site</a>{% endif %}
+                {% if post.paper %}<a href="{{ post.paper }}" target="_blank"><i data-feather="file-text" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>paper</a>{% endif %}
+                {% if post.code %}<a href="{{ post.code }}" target="_blank"><i data-feather="github" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>code</a>{% endif %}
+                {% if post.video %}<a href="{{ post.video }}" target="_blank"><i data-feather="youtube" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>video</a>{% endif %}
+                {% if post.link %}<a href="{{ post.link }}" target="_blank"><i data-feather="link" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>link</a>{% endif %}
+              </div>
+              <div class="modal-abstract">
+                {{ post.content }}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
     </div>
