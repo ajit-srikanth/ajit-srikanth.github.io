@@ -5,8 +5,8 @@ date:   2024-09-16 00:00:00 +00:00
 image: /images/gpd_teaser.gif
 categories: research
 authors: "<strong>Ajit Srikanth*</strong>, Parth Mahajan*, Kallol Saha*, Vishal Mandadi*, Pranjal Paul, Pawan Wadhwani, Brojeshwar Bhowmick, Arun Singh, and Madhava Krishna"
-venue: "CASE, 2025"
-site: http://guided-polynomial-diffusion.github.io/
+venue: "2025 · IEEE International Conference on Automation Science and Engineering (CASE 2025)"
+website: http://guided-polynomial-diffusion.github.io/
 ---
 
-<!--done-->
+We present GPD, a guided polynomial diffusion framework for robot motion planning. By parameterizing trajectories with polynomial basis functions within a diffusion model, GPD produces smooth, dynamically feasible paths with improved guidance controllability.

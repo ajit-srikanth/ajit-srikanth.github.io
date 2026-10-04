@@ -18,7 +18,7 @@ avatar: images/circle_bw_crop.jpg
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: ajit.srikanth@research.iiit.ac.in
+  email: ajitsrik@umich.edu
   facebook:
   flickr:
   github: ajit-srikanth
@@ -53,9 +53,7 @@ url: "https://ajit-srikanth.github.io" # the base hostname & protocol for your s
 # !! You don't need to change any of the configuration flags below !!
 #
 
-#permalink: /:title/
-permalink: /
-
+#permalink: /
 
 # The release of Jekyll Now that you're using
 version: v3.10.0

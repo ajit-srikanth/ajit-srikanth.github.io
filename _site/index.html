@@ -9,277 +9,282 @@
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
-
     gtag('config', 'G-R6SXMKZJE4');
   </script>
 
-
   <title>Ajit Srikanth</title>
-  **under development (both me and the website)
   <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-
+  <meta name="description"
+    content="Ajit Srikanth — PhD student at the University of Michigan, working on robot learning and manipulation.">
   <meta name="author" content="Ajit Srikanth" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link rel="stylesheet" type="text/css" href="/style.css" />
   <link rel="canonical" href="http://localhost:4000/">
-  <!-- <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
-  <!-- <link href="https://fonts.googleapis.com/css?family=Raleway:400,700,400italic,700italic" rel="stylesheet" type="text/css"> -->
+
+  <!-- AOS — Animate On Scroll (6KB gzipped) -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
+
+  <!-- Feather Icons (4KB) -->
+  <script src="https://unpkg.com/feather-icons@4.29.2/dist/feather.min.js"></script>
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:60%;vertical-align:middle">
-              <h1>
-                Ajit Srikanth
-              </h1>
-              <!-- <p>I am a Final year B.Tech with MS by research (dual degree) student at IIIT-Hyderabad.
-                I'm currently an undergraduate researcher at the Robotics Research Center (RRC) @ IIIT-Hyderabad,
-                advised by Prof <a href="https://madhavak-iiith.github.io/">K. Madhava Krishna</a>, and in close collaboration
-                with Prof <a href="https://www.etis.ee/CV/Arun%20Kumar_Singh/eng">Arun Singh</a>, working on robotic manipulation.
-                I spent my summer of 2025 working with Prof <a href="https://davheld.github.io/">David Held</a> at Carnegie Mellon University.
-              </p> -->
-              <p>
-                I am an undergraduate researcher at the Robotics Research Center (RRC), IIIT-Hyderabad, working on robotic manipulation.
-                I am supervised by Prof <a href="https://madhavak-iiith.github.io/">K. Madhava Krishna</a> and collaborate closely 
-                with Prof <a href="https://www.etis.ee/CV/Arun%20Kumar_Singh/eng">Arun Singh</a>.
-                I spent my summer of 2025 working with Prof <a href="https://davheld.github.io/">David Held</a> at Carnegie Mellon University.
-              </p>
 
+  <!-- Fixed top accent strip -->
+  <div class="top-strip"></div>
 
-              <p style="text-align:center">
-                <!-- <a target="_blank" href="mailto:ajitsrikanth@gmail.com">Email</a> &nbsp;/&nbsp; -->
-                <a target="_blank" href="mailto:ajit.srikanth@research.iiit.ac.in">Email</a>  / 
-                <a href="https://github.com/ajit-srikanth">GitHub</a>  / 
-                <a href="https://scholar.google.com/citations?user=2yO8kZoAAAAJ">Google Scholar</a>  / 
-                <a href="https://www.linkedin.com/in/ajitsrikanth"> LinkedIn </a>  / 
-                <a href="https://iiithydresearch-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EWMrEXXBMEpKt0txIY40pUIBKdX7E80d2dEiv-46r-1Leg?e=r6VdX9">
-                  CV </a>
+  <!-- Sticky Glassmorphism Navbar -->
+  <nav class="navbar">
+    <div class="wrapper">
+      <a href="#" class="nav-brand" onclick="showPage('home'); return false;">Ajit Srikanth</a>
+      <ul class="nav-items">
+        <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
+        <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research &amp; More</a></li>
+        <li style="position:relative;">
+          <button class="theme-btn" onclick="cycleTheme()" title="Change theme" aria-label="Change color theme" id="theme-btn">🎾</button>
+          <span class="theme-name" id="theme-name"></span>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <img style="width:100%;max-width:100%" alt="profile photo" src="images/prof_pic.png">
-            </td>
-          </tr>
-        </table>
+  <main class="wrapper">
 
-        <button class="reveal-btn" onclick="toggleSection('more-section', 'view more', '▲')">view more</button>
-        <!-- <button class="reveal-btn" onclick="toggleSection('more-section', '&#9660;', '&#9650;')">&#9660;</button> -->
-        <!-- <button class="reveal-btn" onclick="toggleSection('more-section', '&or;', '&and;')">&or;</button> -->
+        <!-- ═══════════════════════════════════════
+         HOME PAGE
+         ═══════════════════════════════════════ -->
+    <div id="page-home" class="page active">
 
-        <div id="more-section" class="hidden-section">
-          <h3>More</h3>
-          <p>
-            I am interested in working on robot learning for manipulation (or loco-manipulation). 
-            My long-term research goal is to work towards creating robust generalist loco-manipulators that can safely work with or assist humans with any tasks.
-            I wish to create agents which can learn from their (or some other embodiment's) prior experiences
-            to perform tasks, while also being able to adapt to new tasks (and environments) maybe with just a few demonstrations. 
-            <!-- , i.e., robots that can autonomously perform and assist with any general task, such as household robots. -->
-          </p>
-          <p>
-            <!-- Although a bit cliche, I wish to work towards a future where humans and robots coexist, with the robots
-            assiting humans not only in dangerous tasks,
-            but also boring (subjective) everyday tasks like cleaning, cooking, fetching, blah blah blah.
-            Well, this will also enable them to serve as support systems for humans and also scale up accessibility to
-            resources. -->
-          </p>
-          <button class="reveal-btn" onclick="toggleSection('contact-stuff', 'reach out', '▴')">reach out</button>
-
-          <div id="contact-stuff" class="hidden-section">
+      <!-- Hero -->
+      <section class="hero" data-aos="fade-up" data-aos-duration="700">
+        <div class="hero-content">
+          <h1 class="hero-name">Ajit Srikanth</h1>
+          <div class="hero-bio">
             <p>
-            Feel free to reach out to me to for any discussions, collaborations or just to say hi. Most of my social
-            media handles are just "ajitsrikanth" "(.*?)" . I'm always down for an intresting conversation. If you dont
-            know what to talk about, we can talk about Robotics in general,
-            Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning /
-            ML,
-            Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
-            wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
-            domination(?), or literally anything.
-          </p>
+              I am a PhD student at the <a href="https://umich.edu/">University of Michigan</a>,
+              advised by Prof <a href="https://web.eecs.umich.edu/~dmitryb/">Dmitry Berenson</a>.
+            </p>
+            <p>
+              Previously, I was an undergraduate researcher at the
+              <a href="https://robotics.iiit.ac.in/">Robotics Research Center (RRC)</a>, IIIT-Hyderabad,
+              supervised by Prof <a href="https://madhavak-iiith.github.io/">K. Madhava Krishna</a> and in close
+              collaboration
+              with Prof <a href="https://www.etis.ee/CV/Arun%20Kumar_Singh/eng">Arun Singh</a>.
+              I spent my summer of 2025 working with Prof <a href="https://davheld.github.io/">David Held</a> at
+              Carnegie Mellon University.
+            </p>
+            <p>
+              I am interested in working on robot learning for manipulation (or loco-manipulation). 
+              My long-term research goal is to work towards creating robust generalist loco-manipulators that can safely work with or assist humans with any tasks.
+              I wish to create agents which can learn from their (or some other embodiment's) prior experiences
+              to perform tasks, while also being able to adapt to new tasks (and environments) maybe with just a few demonstrations.
+            </p>
+          </div>
+          <div class="link-pills">
+            <a href="mailto:ajitsrik@umich.edu"><i data-feather="mail" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>Email</a>
+            <a href="https://github.com/ajit-srikanth"><i data-feather="github" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>GitHub</a>
+            <a href="https://scholar.google.com/citations?user=2yO8kZoAAAAJ"><i data-feather="book-open" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>Scholar</a>
+            <a href="https://www.linkedin.com/in/ajitsrikanth"><i data-feather="linkedin" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>LinkedIn</a>
+            <a href="https://iiithydresearch-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EWMrEXXBMEpKt0txIY40pUIBKdX7E80d2dEiv-46r-1Leg?e=r6VdX9"><i data-feather="file-text" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>CV</a>
           </div>
         </div>
+        <div class="hero-photo">
+          <img src="images/new_prof_pic.jpg" alt="Ajit Srikanth">
+        </div>
+      </section>
 
-        <!-- insert a line to divide sections -->
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-          <tr>
-            <td style="padding:0px">
-              <hr>
-            </td>
-          </tr>
+      <!-- Updates -->
+      <section class="section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <h2 class="sec-title">
+<span class="dot"></span>Updates</h2>
+        <ul class="news-list stagger">
+          <li data-aos="fade-left" data-aos-duration="400" data-aos-delay="50">
+            <span class="news-date">Sep 2026</span>
+            <span class="news-text">I started my PhD at the University of Michigan, advised by Prof Dmitry
+              Berenson.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Reach Out -->
+      <section class="reach-out" data-aos="fade-up" data-aos-duration="500">
+        <h2>Reach Out</h2>
+        <p>
+          Feel free to reach out for any discussions, collaborations or just to say hi.
+          Most of my social media handles are just "ajitsrikanth". I'm always down for an interesting conversation —
+          be it about Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning / ML,
+          Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
+          wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
+          domination(?), or literally anything.
+        </p>
+      </section>
+
+    </div>
 
 
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tr>
-              <td style="padding:1.5%;width:100%;vertical-align:middle">
-                <h2 style="text-align:center;">Publications</h2>
-              </td>
-            </tr>
-          </table>
+    <!-- ═══════════════════════════════════════
+         RESEARCH & MORE PAGE
+         ═══════════════════════════════════════ -->
+    <div id="page-research" class="page">
 
-
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <pstyle><i>(* denotes equal contribution. Click on publication to view more)</i>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              <tr>
-                <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                  <img src="/tn/images/gpd_teaser.gif" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                </td>
-                <td style="padding:2.5%;width:75%;vertical-align:middle">
-                  <!-- <h3>GPD: Guided Polynomial Diffusion for motion planning</h3> -->
-                  <h3> <a href="http://guided-polynomial-diffusion.github.io/">GPD: Guided Polynomial Diffusion for motion planning</a> </h3>
-                  <br>
-                  <strong>Ajit Srikanth*</strong>, Parth Mahajan*, Kallol Saha*, Vishal Mandadi*, Pranjal Paul, Pawan Wadhwani, Brojeshwar Bhowmick, Arun Singh, and Madhava Krishna
-                  <br>
-                  <em>CASE, 2025</em> <!-- , 2024-->
-                  <br>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-
-                </td>
-              </tr>
-              
-              
-              
-              
-              
-              <tr>
-                <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                  <img src="/tn/images/edmp_demo.gif" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                </td>
-                <td style="padding:2.5%;width:75%;vertical-align:middle">
-                  <!-- <h3>EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</h3> -->
-                  <h3> <a href="https://ensemble-of-costs-diffusion.github.io/">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</a> </h3>
-                  <br>
-                  Kallol Saha*, Vishal Mandadi*, Jayaram Reddy*, <strong>Ajit Srikanth</strong>, Aditya Agarwal, Bipasha Sen, Arun Singh, Madhava Krishna
-                  <br>
-                  <em>ICRA, 2024</em> <!-- , 2024-->
-                  <br>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-
-                </td>
-              </tr>
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-              
-          </pstyle>
-</table>
-          <hr>
+      <!-- Publications -->
+      <section class="section">
+        <h2 class="sec-title" data-aos="fade-up">
+<span class="dot"></span>Publications</h2>
+        <div class="pub-list stagger">
           
-          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-            <tr>
-              <td style="padding:2.5%;width:100%;vertical-align:middle">
-
-                <!-- insert a line to divide sections -->
-                <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                  <tr>
-                    <td style="padding:0px">
-                      <hr>
-                    </td>
-                  </tr>
-                </table> -->
+            
+          
+            
+          
+            
+          
+            
+          
+            
+            <div class="pub-row" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50" onclick="openModal('research-2024-09-15-gpd')">
               
-              <button class="reveal-btn" onclick="toggleSection('more-projects', 'view projects', '▲')">▲</button>
+                <div class="pub-row-thumb">
+                  <img src="/tn/images/gpd_teaser.gif" alt="thumbnail">
+                </div>
+              
+              <div class="pub-row-content">
+                <div class="pub-row-title">GPD: Guided Polynomial Diffusion for motion planning</div>
+                <div class="pub-row-venue">2025 · IEEE International Conference on Automation Science and Engineering (CASE 2025)</div>
+              </div>
+              <div class="pub-row-arrow">
                 
-              <div id="more-projects">
-
+                  <a href="http://guided-polynomial-diffusion.github.io/" target="_blank" onclick="event.stopPropagation()" class="pub-quick-link" title="Project Website">
+                    <i data-feather="globe"></i>
+                  </a>
                 
+                <i data-feather="maximize-2"></i>
+              </div>
+            </div>
 
-                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                      <tr>
-                        <td style="padding:2.5%;width:100%;vertical-align:middle">
-                          <h2 style="text-align:center; margin-bottom:0px;">Projects</h2>
-                        </td>
-                      </tr>
-                    </table>
+            <!-- Modal for this Publication -->
+            <div id="modal-research-2024-09-15-gpd" class="modal-overlay" onclick="closeModal('research-2024-09-15-gpd')">
+              <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('research-2024-09-15-gpd')"><i data-feather="x"></i></button>
+                
+                  <img src="/tn/images/gpd_teaser.gif" alt="paper teaser" class="modal-img">
+                
+                <h3 class="modal-title">GPD: Guided Polynomial Diffusion for motion planning</h3>
+                <div class="modal-venue">2025 · IEEE International Conference on Automation Science and Engineering (CASE 2025)</div>
+                <div class="modal-authors">
+                  <strong>Authors:</strong> <strong>Ajit Srikanth*</strong>, Parth Mahajan*, Kallol Saha*, Vishal Mandadi*, Pranjal Paul, Pawan Wadhwani, Brojeshwar Bhowmick, Arun Singh, and Madhava Krishna
+                  <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; font-style: italic;">* denotes equal contribution</span>
+                </div>
+                <div class="modal-pills">
+                  <a href="http://guided-polynomial-diffusion.github.io/" target="_blank"><i data-feather="globe" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>site</a>
+                  
+                  
+                  
+                  
+                </div>
+                <div class="modal-abstract">
+                  <p>We present GPD, a guided polynomial diffusion framework for robot motion planning. By parameterizing trajectories with polynomial basis functions within a diffusion model, GPD produces smooth, dynamically feasible paths with improved guidance controllability.</p>
+
+                </div>
+              </div>
+            </div>
+            
+          
+            
+            <div class="pub-row" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50" onclick="openModal('research-2024-05-12-edmp')">
+              
+                <div class="pub-row-thumb">
+                  <img src="/tn/images/edmp_demo.gif" alt="thumbnail">
+                </div>
+              
+              <div class="pub-row-content">
+                <div class="pub-row-title">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</div>
+                <div class="pub-row-venue">2024 · IEEE International Conference on Robotics and Automation (ICRA 2024)</div>
+              </div>
+              <div class="pub-row-arrow">
+                
+                  <a href="https://ensemble-of-costs-diffusion.github.io/" target="_blank" onclick="event.stopPropagation()" class="pub-quick-link" title="Project Website">
+                    <i data-feather="globe"></i>
+                  </a>
+                
+                <i data-feather="maximize-2"></i>
+              </div>
+            </div>
+
+            <!-- Modal for this Publication -->
+            <div id="modal-research-2024-05-12-edmp" class="modal-overlay" onclick="closeModal('research-2024-05-12-edmp')">
+              <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('research-2024-05-12-edmp')"><i data-feather="x"></i></button>
+                
+                  <img src="/tn/images/edmp_demo.gif" alt="paper teaser" class="modal-img">
+                
+                <h3 class="modal-title">EDMP: Ensemble-of-costs-guided Diffusion for Motion Planning</h3>
+                <div class="modal-venue">2024 · IEEE International Conference on Robotics and Automation (ICRA 2024)</div>
+                <div class="modal-authors">
+                  <strong>Authors:</strong> Kallol Saha*, Vishal Mandadi*, Jayaram Reddy*, <strong>Ajit Srikanth</strong>, Aditya Agarwal, Bipasha Sen, Arun Singh, Madhava Krishna
+                  <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; font-style: italic;">* denotes equal contribution</span>
+                </div>
+                <div class="modal-pills">
+                  <a href="https://ensemble-of-costs-diffusion.github.io/" target="_blank"><i data-feather="globe" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>site</a>
+                  
+                  
+                  
+                  
+                </div>
+                <div class="modal-abstract">
+                  <p>We propose EDMP, a diffusion-based motion planning approach guided by an ensemble of cost functions. By combining multiple guidance signals during the reverse diffusion process, EDMP generates diverse, collision-free trajectories for robot motion planning in complex 3D environments.</p>
+
+                </div>
+              </div>
+            </div>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Projects -->
+      <section class="section proj-section">
+        <h2 class="sec-title" data-aos="fade-up">
+<span class="dot"></span>Projects</h2>
+        <div class="proj-grid stagger">
+          
+          
+            
+              
+              
+              <div class="proj-card " data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/very_compressed_small_interesting_working_demo.gif" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
                     
-                    <p style="margin-top:0px;"><i>(Click on project to view more)</i></p>
-
-
-
-                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/very_compressed_small_interesting_working_demo.gif" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="">Articubot extension</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2025-05-05 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+                      Articubot extension
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Worked on extending a zero-shot sim-to-real policy for articulated object manipulation (Articubot) by online history conditioning.
 <!-- - Worked on enhancing the real-world deployment of the policy by implementing whole-body manipulation on a mobile
 XArm7, leveraging impedance control, and utilizing action chunking for faster execution. -->
@@ -289,37 +294,34 @@ XArm7, leveraging impedance control, and utilizing action chunking for faster ex
   <li>Improved real-world control by integrating compliant impedance control for safe interaction and optimizing the action execution pipeline (via parallel inference, selective action dropping, and other optimizations) to greatly speedup the real-world execution.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/videossldemovid.gif" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://iiithydresearch-my.sharepoint.com/:p:/g/personal/ajit_srikanth_research_iiit_ac_in/EauQjkJpix1OvJQXlCAYRQcBk20d0z429PPUPN0DQQjBeA?e=FcEfKN">Sound Source Localization on videos</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2025-01-01 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card " data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/videossldemovid.gif" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://iiithydresearch-my.sharepoint.com/:p:/g/personal/ajit_srikanth_research_iiit_ac_in/EauQjkJpix1OvJQXlCAYRQcBk20d0z429PPUPN0DQQjBeA?e=FcEfKN" onclick="event.stopPropagation()">Sound Source Localization on videos</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Developed a system that combines semantic and temporal information to localize sound sources in videos</li>
   <li>Audio-visual grounding by aligning a large Vison-Language Model’s embeddings with audio embeddings (similar to ”Can
 CLIP Help Sound Source Localization?”)</li>
@@ -327,365 +329,515 @@ CLIP Help Sound Source Localization?”)</li>
 module that utilizes a audio-motion transformer</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/asac.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EXHs6qwKLcRLihxNEN74GWMBh7RMKx_rxJVVNgvzx5Y16w?e=se7HKs">ASAC- Assisted Spatial Audio Construction</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2024-12-12 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card " data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/asac.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EXHs6qwKLcRLihxNEN74GWMBh7RMKx_rxJVVNgvzx5Y16w?e=se7HKs" onclick="event.stopPropagation()">ASAC- Assisted Spatial Audio Construction</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Automatically generating spatial audio (like Dolby Atmos) for movie scenes using video understanding.</li>
   <li>Developed a system for complex multi-speaker environments with identity switching, and occlusions, using lightweight tracking, facial recognition and Active Speaker Detection techniques.</li>
   <li>Currently working on improving spatial audio generation in scenes lacking proper visual cues through advanced scene understanding.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/anlp.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://github.com/ajit-srikanth/Contract-NLI/blob/master/Report.pdf">Contract-NLI</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2024-11-21 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card " data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/anlp.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://github.com/ajit-srikanth/Contract-NLI/blob/master/Report.pdf" onclick="event.stopPropagation()">Contract-NLI</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Proposed a two-step BERT-based architecture, improving NLI and evidence inference for legal contracts.</li>
   <li>Improved handling of long-term dependencies in evidence-spans, and context size limits , due to our modified architecture and ensemble approach, achieving higher accuracy than the baseline ContractNLI-BERT.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/rpn.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="">Autonomous Omni-drive robot</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2024-05-05 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+          
+            
+          
+            
+              
+              
+              <div class="proj-card hidden-item" style="display: none;" data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/rpn.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      Autonomous Omni-drive robot
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Assembled a mecanum wheel robot with four Planetary Gear DC Motor driven by two Cytron Mdds30.</li>
   <li>Integrated and calibrated, a Realsense T265 tracking camera and a Realsense D455 depth camera, along with voxfield for obtaining ESDFs utilized for motion planning.</li>
   <li>Implemented several planning algorithms, including CEM, MPPI, and MPC, on an onboard Intel NUC, utilizing ESDFs for collision costs; designed and implemented a PID controller for path-following.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/msd.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="">8 legged Klann walker robot</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2024-04-25 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card hidden-item" style="display: none;" data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/msd.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      8 legged Klann walker robot
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Designed a walker robot with 8 klann linkage mechanims for legs, performing comprehensive kinematics and dynamics analysis with consideration for different gaits for different purposes, on Fusion360.</li>
   <li>Built the mechanism using laser-cut acrylic for links and chassis, with 3D-printed joints and couplers.</li>
   <li>Wrote a simple controller to control the two dynamixel XL330 motors using U2D2 for communication.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/mr.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EbIrqNSqFKtPjFvhKqUj5lABJIBM5oad_lg7WPEO56neUA?e=76u4ab">Object centric reconstruction</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2023-12-05 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card hidden-item" style="display: none;" data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/mr.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://iiitaphyd-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EbIrqNSqFKtPjFvhKqUj5lABJIBM5oad_lg7WPEO56neUA?e=76u4ab" onclick="event.stopPropagation()">Object centric reconstruction</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Designed a complete pipeline for 3D reconstruction of an object using a monocular fixed camera.</li>
   <li>Optimized the initial 3D reconstruction with ICP, pose graph optimization, and Bundle Adjustment for efficient and accurate results; Proposed future enhancements by utilizing NeRFs to learn appearance geometry.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/dip.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://github.com/ajit-srikanth/Haze-Removal-Methods/blob/master/DIP_Project_Report_compressed.pdf">Single image dehazing methods</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2023-12-05 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card hidden-item" style="display: none;" data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/dip.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://github.com/ajit-srikanth/Haze-Removal-Methods/blob/master/DIP_Project_Report_compressed.pdf" onclick="event.stopPropagation()">Single image dehazing methods</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Implementation of various haze removal methods including Bayesian defogging, Single image haze removal using Dark Channel Prior, Single image haze removal using Colour Attenuation Prior.</li>
   <li>Improved upon the DCP prior paper, by adding an additional preprocessing step which increases the restored image quality by utilizing CLAHE; Demonstrated their use in stream tasks like object detection.</li>
   <li>Extensively benchmarked these algorithms along with other classical methods without a degradation model, and analyised their performance.</li>
 </ul>
 
-
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                      
-                      
-                      <tr>
-                        <td style="padding:2.5%;width:25%;vertical-align:middle;min-width:120px">
-                          <img src="/tn/images/ipa_inverted.png" alt="project image" style="width:auto; height:auto; max-width:100%;">
-                        </td>
-                        <td style="padding:2.5%;width:75%;vertical-align:middle">
-                          <h3><a href="https://github.com/ajit-srikanth/Y86-Processor/blob/master/IPA2023_Project_Report.pdf">Y86 ISA Processor</a></h3>
-                          <br>
-                          <em>project </em>
-                          <!-- <br>
-                          2023-03-09 -->
-
-                          <br>
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          
-                          <ul>
+</div>
+                </div>
+              </div>
+            
+          
+            
+              
+              
+              <div class="proj-card hidden-item" style="display: none;" data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="/tn/images/ipa_inverted.png" alt="project image" class="proj-img">
+                <div class="proj-head">
+                  <h3>
+                    
+                      <a href="https://github.com/ajit-srikanth/Y86-Processor/blob/master/IPA2023_Project_Report.pdf" onclick="event.stopPropagation()">Y86 ISA Processor</a>
+                    
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    
+                    
+                    
+                    
+                    
+                  </div>
+                  <div class="desc">
+<ul>
   <li>Designing and implementing sequential and pipelined Y86 ISA Processor in iverilog.</li>
   <li>proper handling of data, structural, and control hazards.</li>
   <li>A basic compiler using python for converting Y86-64 assembly code to machine code for that processor.</li>
 </ul>
 
+</div>
+                </div>
+              </div>
+            
+          
+        </div>
+        
+        
+          <div class="view-more-container" style="text-align: center; margin-top: 2rem;">
+            <button class="btn" id="view-more-proj-btn" data-expanded="false" onclick="toggleViewMore(this)">View More <i data-feather="chevron-down"></i></button>
+          </div>
+        
+      </section>
 
-                        </td>
-                      </tr>
-                      
-                      
-                      
-                    </table>
+      <div class="divider"></div>
 
-                    <!-- insert a line to divide sections -->
-                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                      <tr>
-                        <td style="padding:0px">
-                          <hr>
-                        </td>
-                      </tr>
-                    </table>
+      <!-- Teaching -->
+      <section class="section">
+        <h2 class="sec-title" data-aos="fade-up">
+<span class="dot"></span>Teaching</h2>
+        <ul class="teach-list">
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="0">
+            <span class="course">EC4.404 Mechatronics Systems Design (Spring 2026)</span>
+            — Teaching Assistant at IIIT-Hyderabad.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="50">
+            <span class="course">CS7.503 Mobile Robotics (Monsoon 2025)</span>
+            — Teaching Assistant at IIIT-Hyderabad.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="100">
+            <span class="course">EC4.403 Robotics Planning and Navigation (Spring 2025)</span>
+            — TA by Prof. Madhava Krishna. Taught lectures on MPC/MPPI/CEM, C-space planning, Trajectory Generation,
+            Collision Cone &amp; Reactive Avoidance. Mentored projects across drones, manipulators, mobile robots.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="150">
+            <span class="course">CS7.503 Mobile Robotics (Monsoon 2024)</span>
+            — Taught two lectures by Prof. K. Madhava Krishna on Transformations, Quaternions, and ICP SLAM.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="200">
+            <span class="course">EC2.204 Intro to Processor Architecture (Spring 2024)</span>
+            — TA by Prof. Deepak Gangadharan. Tutorials on Verilog HDL, X86 ISA, pipelined architectures. Designed the
+            final project: Y86 ISA pipelined processor.
+          </li>
+        </ul>
+      </section>
 
+      <!-- Reach Out -->
+      <section class="reach-out" data-aos="fade-up" data-aos-duration="500">
+        <h2>Reach Out</h2>
+        <p>
+          Feel free to reach out for any discussions, collaborations or just to say hi.
+          Most of my social media handles are just "ajitsrikanth". I'm always down for an interesting conversation —
+          be it about Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning / ML,
+          Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
+          wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
+          domination(?), or literally anything.
+        </p>
+      </section>
 
-                  </div>
-
-                  <div id="teaching">
-                    <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                      <tr>
-                        <td style="padding:2.5%;width:100%;vertical-align:middle">
-                          <h2 style="text-align:center;">Teaching</h2>
-                        </td>
-                      </tr>
-                    </table>
-
-                    <p>
-                    </p>
-<ul>
-                      <li>
-                        I served as a teaching assistant for the course EC4.403 Robotics Planning and Navigation (Spring 2025) at IIIT-Hyderabad
-                        by Prof. Madhava Krishna, where I prepared and graded assignments, conducted tutorials, and taught a few
-                        lectures on topics including: MPC/MPPI/CEM, C-space planning, Time Parametrized Trajectory Generation, Collision
-                        Cone and Reactive Avoidance. In addition, I mentored students on their final projects, which involved 
-                        MPC/MPPI/CEM-based control, multi-modal perception, motion planning, and reactive collision avoidance,
-                        across three embodiments: drones, manipulators, and mobile robots
-                      </li>
-                      <li>
-                        I taught two lectures at for the course CS7.503 Mobile Robotics (Monsoon 2024) at IIIT-Hyderabad
-                        by Prof. K. Madhava Krishna,
-                        where I covered the basics of Transformations and Quaternions representations, and then ICP
-                        slam.
-                      </li>
-                      <li>
-                        I served as a teaching assistant for the course EC2.204 Intro to Processor Architecture (Spring
-                        2024) at IIIT-Hyderabad by Prof. Deepak Gangadharan, with around 100 students, where I prepared
-                        assignments, and conducted tutorials on topics including: Verilog HDL programming, X86 ISA,
-                        Sequential and pipelined architectures and hazard handling.
-                        Further, I helped design and mentor the students for the final project, which was to design a
-                        Y86 ISA pipelined processor, with proper branch prediction and hazard handling.
-                      </li>
-
-                    </ul>
-                    
-
-                  </div>
-
-
-
-                  <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
-                    <tr>
-                      <td style="padding:0px">
-                        <br>
-                        <p style="text-align:center;font-size:small;">
-                          Design and source code from <a style="font-size:small;" href="https://jonbarron.info">Jon
-                            Barron's website</a>
-                        </p>
-                      </td>
-                    </tr>
-                  </table>
+    </div>
 
 
-              </td>
-            </tr>
-          </table>
 
-          <script>
-  function toggleSection(sectionId, buttonText, closebuttonText) {
-  var section = document.getElementById(sectionId);
-  var button = document.querySelector(`button[onclick="toggleSection('${sectionId}', '${buttonText}', '${closebuttonText}')"]`);
-  
-  if (section.classList.contains('hidden-section')) {
-    section.classList.remove('hidden-section');
-    button.textContent = closebuttonText;
-    
-    section.appendChild(button);
-  } else {
-    section.classList.add('hidden-section');
-    button.textContent = buttonText;
-    
-    section.parentNode.insertBefore(button, section);
-  }
-}
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p style="font-size: 0.85rem; font-style: italic; color: var(--text-muted); text-align: center;">
+        **under development (both me and the website)
+      </p>
+    </footer>
 
-</script>
-</table>
-</td>
-</tr>
-</table></body>
+  </main>
+
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+
+  <!-- ═══════════════════════════════════════
+       JAVASCRIPT
+       ═══════════════════════════════════════ -->
+  <script>
+    // ────────────────────────────────────────
+    // THEME SYSTEM
+    // 8 sport themes — just CSS variable swaps
+    // ────────────────────────────────────────
+    var THEMES = [
+      {
+        name: 'Tennis',
+        icon: '🎾',
+        primary: '#2d6a4f', primaryLight: '#40916c', primaryDark: '#1b4332',
+        accent: '#d4a843', accentLight: '#e8c96a', accentDim: 'rgba(212,168,67,0.12)',
+        ghost: 'rgba(45,106,79,0.06)', ghostStrong: 'rgba(45,106,79,0.12)',
+        strip: 'linear-gradient(90deg,#1b4332,#2d6a4f,#40916c,#2d6a4f,#1b4332)'
+      },
+      {
+        name: 'Swimming',
+        icon: '🏊',
+        primary: '#1565c0', primaryLight: '#42a5f5', primaryDark: '#0d47a1',
+        accent: '#4fc3f7', accentLight: '#81d4fa', accentDim: 'rgba(79,195,247,0.12)',
+        ghost: 'rgba(21,101,192,0.06)', ghostStrong: 'rgba(21,101,192,0.12)',
+        strip: 'linear-gradient(90deg,#0d47a1,#1565c0,#42a5f5,#1565c0,#0d47a1)'
+      },
+      {
+        name: 'Cricket',
+        icon: '🏏',
+        primary: '#6d4c2e', primaryLight: '#8d6e4b', primaryDark: '#3e2723',
+        accent: '#c8a96e', accentLight: '#d4b98a', accentDim: 'rgba(200,169,110,0.12)',
+        ghost: 'rgba(109,76,46,0.06)', ghostStrong: 'rgba(109,76,46,0.12)',
+        strip: 'linear-gradient(90deg,#3e2723,#6d4c2e,#8d6e4b,#6d4c2e,#3e2723)'
+      },
+      {
+        name: 'Basketball',
+        icon: '🏀',
+        primary: '#bf5700', primaryLight: '#e07020', primaryDark: '#8b3e00',
+        accent: '#f5a623', accentLight: '#ffc857', accentDim: 'rgba(245,166,35,0.12)',
+        ghost: 'rgba(191,87,0,0.06)', ghostStrong: 'rgba(191,87,0,0.12)',
+        strip: 'linear-gradient(90deg,#8b3e00,#bf5700,#e07020,#bf5700,#8b3e00)'
+      },
+      {
+        name: 'Table Tennis',
+        icon: '🏓',
+        primary: '#283593', primaryLight: '#3f51b5', primaryDark: '#1a237e',
+        accent: '#ef5350', accentLight: '#ff7961', accentDim: 'rgba(239,83,80,0.12)',
+        ghost: 'rgba(40,53,147,0.06)', ghostStrong: 'rgba(40,53,147,0.12)',
+        strip: 'linear-gradient(90deg,#1a237e,#283593,#3f51b5,#283593,#1a237e)'
+      },
+      {
+        name: 'Volleyball',
+        icon: '🏐',
+        primary: '#00838f', primaryLight: '#00acc1', primaryDark: '#006064',
+        accent: '#f9a825', accentLight: '#fdd835', accentDim: 'rgba(249,168,37,0.12)',
+        ghost: 'rgba(0,131,143,0.06)', ghostStrong: 'rgba(0,131,143,0.12)',
+        strip: 'linear-gradient(90deg,#006064,#00838f,#00acc1,#00838f,#006064)'
+      },
+      {
+        name: 'Badminton',
+        icon: '🏸',
+        primary: '#00695c', primaryLight: '#00897b', primaryDark: '#004d40',
+        accent: '#b0bec5', accentLight: '#cfd8dc', accentDim: 'rgba(176,190,197,0.15)',
+        ghost: 'rgba(0,105,92,0.06)', ghostStrong: 'rgba(0,105,92,0.12)',
+        strip: 'linear-gradient(90deg,#004d40,#00695c,#00897b,#00695c,#004d40)'
+      },
+      {
+        name: 'Football',
+        icon: '⚽',
+        primary: '#2e7d32', primaryLight: '#43a047', primaryDark: '#1b5e20',
+        accent: '#e0e0e0', accentLight: '#f5f5f5', accentDim: 'rgba(224,224,224,0.18)',
+        ghost: 'rgba(46,125,50,0.06)', ghostStrong: 'rgba(46,125,50,0.12)',
+        strip: 'linear-gradient(90deg,#1b5e20,#2e7d32,#43a047,#2e7d32,#1b5e20)'
+      }
+    ];
+
+    function applyTheme(t) {
+      var r = document.documentElement.style;
+      r.setProperty('--primary', t.primary);
+      r.setProperty('--primary-light', t.primaryLight);
+      r.setProperty('--primary-dark', t.primaryDark);
+      r.setProperty('--accent', t.accent);
+      r.setProperty('--accent-light', t.accentLight);
+      r.setProperty('--accent-dim', t.accentDim);
+      r.setProperty('--primary-ghost', t.ghost);
+      r.setProperty('--primary-ghost-strong', t.ghostStrong);
+      r.setProperty('--strip-gradient', t.strip);
+
+      var btn = document.getElementById('theme-btn');
+      if (btn) btn.textContent = t.icon;
+
+      // Theme name tooltip flashing removed as requested
+    }
+
+    function initTheme() {
+      var saved = sessionStorage.getItem('ti');
+      var idx = saved !== null ? parseInt(saved, 10) : Math.floor(Math.random() * THEMES.length);
+      sessionStorage.setItem('ti', idx);
+      applyTheme(THEMES[idx]);
+    }
+
+    function cycleTheme() {
+      var cur = parseInt(sessionStorage.getItem('ti') || '0', 10);
+      var next = (cur + 1) % THEMES.length;
+      sessionStorage.setItem('ti', next);
+      applyTheme(THEMES[next]);
+    }
+
+
+    // ────────────────────────────────────────
+    // PAGE SWITCHING (Home ↔ Research & More)
+    // ────────────────────────────────────────
+    function showPage(page) {
+      // Hide all pages
+      document.querySelectorAll('.page').forEach(function (el) { el.classList.remove('active'); });
+      document.querySelectorAll('.nav-items a[id]').forEach(function (el) { el.classList.remove('active'); });
+
+      if (page === 'home') {
+        document.getElementById('page-home').classList.add('active');
+        document.getElementById('nav-home').classList.add('active');
+      } else {
+        document.getElementById('page-research').classList.add('active');
+        document.getElementById('nav-research').classList.add('active');
+      }
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      history.replaceState(null, '', page === 'home' ? window.location.pathname : '#research');
+
+      // Re-trigger AOS for newly visible elements
+      setTimeout(function () { AOS.refresh(); }, 100);
+    }
+
+
+    // ────────────────────────────────────────
+    // MODALS & COMPONENTS
+    // ────────────────────────────────────────
+    function openModal(id) {
+      document.getElementById('modal-' + id).classList.add('active');
+      document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeModal(id) {
+      document.getElementById('modal-' + id).classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    // Close modal if clicked outside of modal content
+    window.onclick = function(event) {
+      if (event.target.classList.contains('modal-overlay')) {
+        event.target.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    };
+
+    function toggleProj(event, element) {
+      // Don't toggle if a link was clicked
+      if (event.target.tagName.toLowerCase() === 'a') return;
+      element.classList.toggle('open');
+    }
+
+    function toggleViewMore(btn) {
+      var grid = btn.closest('.proj-section').querySelector('.proj-grid');
+      var hiddenItems = grid.querySelectorAll('.proj-card.hidden-item');
+      var isExpanded = btn.getAttribute('data-expanded') === 'true';
+      
+      if (!isExpanded) {
+        hiddenItems.forEach(item => item.style.display = 'flex');
+        btn.innerHTML = 'Show Less <i data-feather="chevron-up"></i>';
+        btn.setAttribute('data-expanded', 'true');
+      } else {
+        hiddenItems.forEach(item => item.style.display = 'none');
+        btn.innerHTML = 'View More <i data-feather="chevron-down"></i>';
+        btn.setAttribute('data-expanded', 'false');
+      }
+      if (window.feather) feather.replace();
+    }
+
+
+    // ────────────────────────────────────────
+    // INIT
+    // ────────────────────────────────────────
+    document.addEventListener('DOMContentLoaded', function () {
+      // Apply theme
+      initTheme();
+
+      // Initialize AOS
+      AOS.init({
+        once: true,       // Animate only once
+        offset: 60,
+        easing: 'ease-out-cubic'
+      });
+
+      // Render Feather icons
+      if (window.feather) feather.replace();
+
+      // Check hash
+      if (window.location.hash === '#research') {
+        showPage('research');
+      }
+    });
+  </script>
+
+</body>
 
 </html>

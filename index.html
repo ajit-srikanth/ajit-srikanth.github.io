@@ -1,0 +1,233 @@
+---
+layout: default
+---
+    <!-- ═══════════════════════════════════════
+         HOME PAGE
+         ═══════════════════════════════════════ -->
+    <div id="page-home" class="page active">
+
+      <!-- Hero -->
+      <section class="hero" data-aos="fade-up" data-aos-duration="700">
+        <div class="hero-content">
+          <h1 class="hero-name">Ajit Srikanth</h1>
+          <div class="hero-bio">
+            <p>
+              I am a PhD student at the <a href="https://umich.edu/">University of Michigan</a>,
+              advised by Prof <a href="https://web.eecs.umich.edu/~dmitryb/">Dmitry Berenson</a>.
+            </p>
+            <p>
+              Previously, I was an undergraduate researcher at the
+              <a href="https://robotics.iiit.ac.in/">Robotics Research Center (RRC)</a>, IIIT-Hyderabad,
+              supervised by Prof <a href="https://madhavak-iiith.github.io/">K. Madhava Krishna</a> and in close
+              collaboration
+              with Prof <a href="https://www.etis.ee/CV/Arun%20Kumar_Singh/eng">Arun Singh</a>.
+              I spent my summer of 2025 working with Prof <a href="https://davheld.github.io/">David Held</a> at
+              Carnegie Mellon University.
+            </p>
+            <p>
+              I am interested in working on robot learning for manipulation (or loco-manipulation). 
+              My long-term research goal is to work towards creating robust generalist loco-manipulators that can safely work with or assist humans with any tasks.
+              I wish to create agents which can learn from their (or some other embodiment's) prior experiences
+              to perform tasks, while also being able to adapt to new tasks (and environments) maybe with just a few demonstrations.
+            </p>
+          </div>
+          <div class="link-pills">
+            <a href="mailto:ajitsrik@umich.edu"><i data-feather="mail"
+                style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>Email</a>
+            <a href="https://github.com/ajit-srikanth"><i data-feather="github"
+                style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>GitHub</a>
+            <a href="https://scholar.google.com/citations?user=2yO8kZoAAAAJ"><i data-feather="book-open"
+                style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>Scholar</a>
+            <a href="https://www.linkedin.com/in/ajitsrikanth"><i data-feather="linkedin"
+                style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>LinkedIn</a>
+            <a
+              href="https://iiithydresearch-my.sharepoint.com/:b:/g/personal/ajit_srikanth_research_iiit_ac_in/EWMrEXXBMEpKt0txIY40pUIBKdX7E80d2dEiv-46r-1Leg?e=r6VdX9"><i
+                data-feather="file-text" style="width:14px;height:14px;vertical-align:-2px;margin-right:3px;"></i>CV</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <img src="images/new_prof_pic.jpg" alt="Ajit Srikanth">
+        </div>
+      </section>
+
+      <!-- Updates -->
+      <section class="section" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+        <h2 class="sec-title"><span class="dot"></span>Updates</h2>
+        <ul class="news-list stagger">
+          <li data-aos="fade-left" data-aos-duration="400" data-aos-delay="50">
+            <span class="news-date">Sep 2026</span>
+            <span class="news-text">I started my PhD at the University of Michigan, advised by Prof Dmitry
+              Berenson.</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Reach Out -->
+      <section class="reach-out" data-aos="fade-up" data-aos-duration="500">
+        <h2>Reach Out</h2>
+        <p>
+          Feel free to reach out for any discussions, collaborations or just to say hi.
+          Most of my social media handles are just "ajitsrikanth". I'm always down for an interesting conversation —
+          be it about Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning / ML,
+          Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
+          wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
+          domination(?), or literally anything.
+        </p>
+      </section>
+
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+         RESEARCH & MORE PAGE
+         ═══════════════════════════════════════ -->
+    <div id="page-research" class="page">
+
+      <!-- Publications -->
+      <section class="section">
+        <h2 class="sec-title" data-aos="fade-up"><span class="dot"></span>Publications</h2>
+        <div class="pub-list stagger">
+          {% for post in site.posts %}
+            {% if post.categories contains 'research' %}
+            <div class="pub-row" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50" onclick="openModal('{{ post.id | slugify }}')">
+              {% if post.image %}
+                <div class="pub-row-thumb">
+                  <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="thumbnail" />
+                </div>
+              {% else %}
+                <div class="pub-row-year">{{ post.date | date: "%Y" }}</div>
+              {% endif %}
+              <div class="pub-row-content">
+                <div class="pub-row-title">{{ post.title }}</div>
+                <div class="pub-row-venue">{{ post.venue }}</div>
+              </div>
+              <div class="pub-row-arrow">
+                {% if post.website %}
+                  <a href="{{ post.website }}" target="_blank" onclick="event.stopPropagation()" class="pub-quick-link" title="Project Website">
+                    <i data-feather="globe"></i>
+                  </a>
+                {% endif %}
+                <i data-feather="maximize-2"></i>
+              </div>
+            </div>
+
+            <!-- Modal for this Publication -->
+            <div id="modal-{{ post.id | slugify }}" class="modal-overlay" onclick="closeModal('{{ post.id | slugify }}')">
+              <div class="modal-content" onclick="event.stopPropagation()">
+                <button class="modal-close" onclick="closeModal('{{ post.id | slugify }}')"><i data-feather="x"></i></button>
+                {% if post.image %}
+                  <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="paper teaser" class="modal-img" />
+                {% endif %}
+                <h3 class="modal-title">{{ post.title }}</h3>
+                <div class="modal-venue">{{ post.venue }}</div>
+                <div class="modal-authors">
+                  <strong>Authors:</strong> {{ post.authors }}
+                  <span style="display: block; font-size: 0.75rem; color: var(--text-muted); margin-top: 0.2rem; font-style: italic;">* denotes equal contribution</span>
+                </div>
+                <div class="modal-pills">
+                  {% if post.website %}<a href="{{ post.website }}" target="_blank"><i data-feather="globe" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>site</a>{% endif %}
+                  {% if post.paper %}<a href="{{ post.paper }}" target="_blank"><i data-feather="file-text" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>paper</a>{% endif %}
+                  {% if post.code %}<a href="{{ post.code }}" target="_blank"><i data-feather="github" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>code</a>{% endif %}
+                  {% if post.video %}<a href="{{ post.video }}" target="_blank"><i data-feather="youtube" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>video</a>{% endif %}
+                  {% if post.link %}<a href="{{ post.link }}" target="_blank"><i data-feather="link" style="width:14px;height:14px;vertical-align:-2px;margin-right:4px;"></i>link</a>{% endif %}
+                </div>
+                <div class="modal-abstract">
+                  {{ post.content }}
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Projects -->
+      <section class="section proj-section">
+        <h2 class="sec-title" data-aos="fade-up"><span class="dot"></span>Projects</h2>
+        <div class="proj-grid stagger">
+          {% assign proj_count = 0 %}
+          {% for post in site.posts %}
+            {% unless post.categories contains 'research' %}
+              {% assign proj_count = proj_count | plus: 1 %}
+              
+              <div class="proj-card {% if proj_count > 4 %}hidden-item{% endif %}" {% if proj_count > 4 %}style="display: none;"{% endif %} data-aos="fade-up" data-aos-duration="400" onclick="toggleProj(event, this)">
+                <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="project image" class="proj-img" />
+                <div class="proj-head">
+                  <h3>
+                    {% if post.link %}
+                      <a href="{{ post.link }}" onclick="event.stopPropagation()">{{ post.title }}</a>
+                    {% else %}
+                      {{ post.title }}
+                    {% endif %}
+                  </h3>
+                  <div class="proj-arrow">▼</div>
+                </div>
+                <div class="proj-body" onclick="event.stopPropagation()">
+                  <div class="proj-links">
+                    {% if post.website %}<a href="{{ post.website }}" target="_blank">site</a>{% endif %}
+                    {% if post.paper %}<a href="{{ post.paper }}" target="_blank">paper</a>{% endif %}
+                    {% if post.code %}<a href="{{ post.code }}" target="_blank">code</a>{% endif %}
+                    {% if post.video %}<a href="{{ post.video }}" target="_blank">video</a>{% endif %}
+                    {% if post.patent %}<a href="{{ post.patent }}" target="_blank">patent</a>{% endif %}
+                  </div>
+                  <div class="desc">{{ post.excerpt }}</div>
+                </div>
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+        
+        {% if proj_count > 4 %}
+          <div class="view-more-container" style="text-align: center; margin-top: 2rem;">
+            <button class="btn" id="view-more-proj-btn" data-expanded="false" onclick="toggleViewMore(this)">View More <i data-feather="chevron-down"></i></button>
+          </div>
+        {% endif %}
+      </section>
+
+      <div class="divider"></div>
+
+      <!-- Teaching -->
+      <section class="section">
+        <h2 class="sec-title" data-aos="fade-up"><span class="dot"></span>Teaching</h2>
+        <ul class="teach-list">
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="0">
+            <span class="course">EC4.404 Mechatronics Systems Design (Spring 2026)</span>
+            — Teaching Assistant at IIIT-Hyderabad.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="50">
+            <span class="course">CS7.503 Mobile Robotics (Monsoon 2025)</span>
+            — Teaching Assistant at IIIT-Hyderabad.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="100">
+            <span class="course">EC4.403 Robotics Planning and Navigation (Spring 2025)</span>
+            — TA by Prof. Madhava Krishna. Taught lectures on MPC/MPPI/CEM, C-space planning, Trajectory Generation,
+            Collision Cone & Reactive Avoidance. Mentored projects across drones, manipulators, mobile robots.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="150">
+            <span class="course">CS7.503 Mobile Robotics (Monsoon 2024)</span>
+            — Taught two lectures by Prof. K. Madhava Krishna on Transformations, Quaternions, and ICP SLAM.
+          </li>
+          <li data-aos="fade-up" data-aos-duration="350" data-aos-delay="200">
+            <span class="course">EC2.204 Intro to Processor Architecture (Spring 2024)</span>
+            — TA by Prof. Deepak Gangadharan. Tutorials on Verilog HDL, X86 ISA, pipelined architectures. Designed the
+            final project: Y86 ISA pipelined processor.
+          </li>
+        </ul>
+      </section>
+
+      <!-- Reach Out -->
+      <section class="reach-out" data-aos="fade-up" data-aos-duration="500">
+        <h2>Reach Out</h2>
+        <p>
+          Feel free to reach out for any discussions, collaborations or just to say hi.
+          Most of my social media handles are just "ajitsrikanth". I'm always down for an interesting conversation —
+          be it about Robot Learning, Reinforcement Learning, Motion Planning, Foundation Models, Computer Vision, Deep Learning / ML,
+          Computer architecture, Hardware acceleration, any cool math theorms / neat proofs, physics (feel free to go
+          wild with your theories), tennis, cricket, most other sports, movies (any genre works), anime, world
+          domination(?), or literally anything.
+        </p>
+      </section>
+
+    </div>

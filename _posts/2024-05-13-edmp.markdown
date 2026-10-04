@@ -5,8 +5,8 @@ date:   2024-05-13 00:00:00 +00:00
 image: /images/edmp_demo.gif
 categories: research
 authors: "Kallol Saha*, Vishal Mandadi*, Jayaram Reddy*, <strong>Ajit Srikanth</strong>, Aditya Agarwal, Bipasha Sen, Arun Singh, Madhava Krishna"
-venue: "ICRA, 2024"
-site: https://ensemble-of-costs-diffusion.github.io/
+venue: "2024 · IEEE International Conference on Robotics and Automation (ICRA 2024)"
+website: https://ensemble-of-costs-diffusion.github.io/
 ---
 
-<!--done-->
+We propose EDMP, a diffusion-based motion planning approach guided by an ensemble of cost functions. By combining multiple guidance signals during the reverse diffusion process, EDMP generates diverse, collision-free trajectories for robot motion planning in complex 3D environments.
