@@ -41,7 +41,7 @@
         <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
         <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research & More</a></li>
         <li class="theme-menu-container" style="position:relative; display: flex; align-items: center;">
-          <button id="theme-btn" class="theme-btn" onclick="toggleThemeMenu()" aria-label="Select color theme" title="Change theme"></button>
+          <button id="theme-btn" class="theme-btn" onclick="toggleThemeMenu()" aria-label="Select color theme"></button>
           <div id="theme-menu" class="theme-menu"></div>
         </li>
       </ul>
@@ -259,7 +259,6 @@
           var btn = document.createElement('button');
           btn.className = 'theme-menu-item';
           btn.textContent = t.icon;
-          btn.title = t.name;
           btn.onclick = function() {
             applyThemeFromIndex(i);
             toggleThemeMenu();
