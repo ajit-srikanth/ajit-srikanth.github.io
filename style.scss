@@ -102,7 +102,7 @@ body::before {
   box-shadow: 0 15px 40px rgba(0,0,0,0.1);
   margin-top: 1rem;
   margin-bottom: 3rem;
-  border: 1px solid rgba(255,255,255,0.4);
+  border: 1px solid var(--primary-ghost-strong);
 }
 
 @media (max-width: 600px) {
@@ -125,12 +125,12 @@ body::before {
    ═══════════════════════════════════════════ */
 .navbar {
   position: sticky;
-  top: 4px; /* below the strip */
+  top: 0;
   z-index: 100;
   backdrop-filter: blur(16px) saturate(180%);
   -webkit-backdrop-filter: blur(16px) saturate(180%);
-  background: rgba(250, 250, 248, 0.85);
-  border-bottom: 1px solid var(--border-light);
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--primary-ghost);
   margin-bottom: 2rem;
   transition: background 0.4s ease;
 }
@@ -274,10 +274,10 @@ body::before {
   color: var(--primary);
   text-decoration: none;
   padding: 0.35rem 0.8rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   border-radius: 20px;
   transition: all 0.25s ease;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--primary-ghost-strong);
 }
 
 .link-pills a:hover {
@@ -344,7 +344,7 @@ body::before {
   content: '';
   flex: 1;
   height: 1px;
-  background: linear-gradient(to right, var(--border), transparent);
+  background: linear-gradient(to right, var(--primary-ghost-strong), transparent);
   margin-left: 0.5rem;
 }
 
@@ -354,7 +354,7 @@ body::before {
    ═══════════════════════════════════════════ */
 .news-list {
   list-style: none;
-  border-left: 2px solid var(--border-light);
+  border-left: 2px solid var(--primary-ghost);
   padding-left: 1.25rem;
   margin-left: 0.25rem;
 }
@@ -423,7 +423,7 @@ body::before {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
   text-align: center;
@@ -472,7 +472,7 @@ body::before {
   background: var(--bg-card);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--primary-ghost);
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -605,7 +605,7 @@ body::before {
   transform: translateY(20px) scale(0.95);
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.3);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--primary-ghost);
 }
 
 .modal-overlay.active .modal-content {
@@ -617,7 +617,7 @@ body::before {
   top: 1.2rem;
   right: 1.2rem;
   background: var(--bg-card);
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   color: var(--text);
   width: 36px;
   height: 36px;
@@ -644,7 +644,7 @@ body::before {
   object-fit: contain;
   border-radius: var(--radius-sm);
   margin-bottom: 1.5rem;
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--primary-ghost);
   background: var(--bg-card);
 }
 
@@ -670,7 +670,7 @@ body::before {
   margin-bottom: 1.5rem;
   padding: 1rem 1.2rem;
   background: var(--bg-card);
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--primary-ghost);
   border-radius: var(--radius-sm);
 }
 
@@ -689,7 +689,7 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 0.4rem 0.8rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   border-radius: 6px;
   transition: all 0.2s;
   display: flex;
@@ -706,7 +706,7 @@ body::before {
   font-size: 0.95rem;
   line-height: 1.7;
   color: var(--text-secondary);
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid var(--primary-ghost);
   padding-top: 1.5rem;
 }
 
@@ -725,7 +725,7 @@ body::before {
 }
 
 .proj-card {
-  border: 1px solid var(--border-light);
+  border: 1px solid var(--primary-ghost);
   border-radius: var(--radius-sm);
   background: var(--bg-card);
   backdrop-filter: blur(12px);
@@ -819,7 +819,7 @@ body::before {
   text-transform: uppercase;
   letter-spacing: 0.04em;
   padding: 0.2rem 0.5rem;
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   border-radius: 4px;
   transition: all 0.2s;
   white-space: nowrap;
@@ -897,7 +897,7 @@ body::before {
 
 .teach-list li {
   padding: 0.65rem 0;
-  border-bottom: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--primary-ghost);
   font-size: 0.9rem;
   color: var(--text-secondary);
   line-height: 1.6;
@@ -917,7 +917,7 @@ body::before {
 .divider {
   position: relative;
   height: 1px;
-  background: var(--border);
+  background: var(--primary-ghost-strong);
   margin: var(--gap) 0;
 }
 
@@ -941,7 +941,7 @@ body::before {
    ═══════════════════════════════════════════ */
 .site-footer {
   padding: 2rem 0 1.5rem;
-  border-top: 1px solid var(--border-light);
+  border-top: 1px solid var(--primary-ghost);
   margin-top: var(--gap);
   text-align: center;
 }
@@ -1097,7 +1097,7 @@ body, .navbar, .nav-brand, .hero-name,
   padding: 0.6rem 1.5rem;
   background: var(--bg-card);
   color: var(--text);
-  border: 1px solid var(--border);
+  border: 1px solid var(--primary-ghost-strong);
   border-radius: 50px;
   font-weight: 600;
   font-size: 0.9rem;

@@ -35,15 +35,17 @@
 
   <!-- Sticky Glassmorphism Navbar -->
   <nav class="navbar">
-    <div class="wrapper">
-      <a href="#" class="nav-brand" onclick="showPage('home'); return false;">Ajit Srikanth</a>
-      <ul class="nav-items">
-        <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
-        <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research & More</a></li>
-        <li class="theme-menu-container" style="position:relative; display: flex; align-items: center;">
-          <button id="theme-btn" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
-        </li>
-      </ul>
+    <div class="wrapper" style="display: flex; justify-content: space-between; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 2rem;">
+        <a href="#" class="nav-brand" onclick="showPage('home'); return false;">Ajit Srikanth</a>
+        <ul class="nav-items" style="display: flex; gap: 1.5rem; list-style: none; padding: 0; margin: 0;">
+          <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
+          <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research & More</a></li>
+        </ul>
+      </div>
+      <div class="theme-menu-container" style="position:relative; display: flex; align-items: center;">
+        <button id="theme-btn" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
+      </div>
     </div>
   </nav>
 
@@ -251,18 +253,17 @@
       if (sIcon) sIcon.textContent = t.scrollIcon;
     }
 
+    var currentThemeIdx = 0;
+
     function initTheme() {
-      var saved = sessionStorage.getItem('ti');
-      var idx = saved !== null ? parseInt(saved, 10) : 0; // 0 is Tennis
-      sessionStorage.setItem('ti', idx);
-      applyTheme(THEMES[idx]);
+      // Always start with Tennis (0) on page load
+      currentThemeIdx = 0;
+      applyTheme(THEMES[currentThemeIdx]);
     }
 
     function toggleTheme() {
-      var saved = sessionStorage.getItem('ti');
-      var idx = saved !== null ? parseInt(saved, 10) : 0;
-      var newIdx = idx === 0 ? 1 : 0; // Toggle between 0 (Tennis) and 1 (Robotics)
-      applyThemeFromIndex(newIdx);
+      currentThemeIdx = currentThemeIdx === 0 ? 1 : 0; // Toggle between 0 (Tennis) and 1 (Robotics)
+      applyThemeFromIndex(currentThemeIdx);
     }
 
     function applyThemeFromIndex(idx) {
