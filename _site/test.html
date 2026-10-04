@@ -41,8 +41,7 @@
         <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
         <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research & More</a></li>
         <li class="theme-menu-container" style="position:relative; display: flex; align-items: center;">
-          <button id="theme-btn" class="theme-btn" onclick="toggleThemeMenu()" aria-label="Select color theme"></button>
-          <div id="theme-menu" class="theme-menu"></div>
+          <button id="theme-btn" class="theme-btn" onclick="toggleTheme()" aria-label="Toggle theme"></button>
         </li>
       </ul>
     </div>
@@ -254,40 +253,17 @@
     }
 
     function initTheme() {
-      var menu = document.getElementById('theme-menu');
-      if (menu && menu.children.length === 0) {
-        THEMES.forEach(function(t, i) {
-          var btn = document.createElement('button');
-          btn.className = 'theme-menu-item';
-          btn.textContent = t.icon;
-          btn.onclick = function() {
-            applyThemeFromIndex(i);
-            toggleThemeMenu();
-          };
-          menu.appendChild(btn);
-        });
-      }
-
       var saved = sessionStorage.getItem('ti');
       var idx = saved !== null ? parseInt(saved, 10) : 0; // 0 is Tennis
       sessionStorage.setItem('ti', idx);
       applyTheme(THEMES[idx]);
-
-      // Close menu when clicking outside
-      document.addEventListener('click', function(e) {
-        var container = document.querySelector('.theme-menu-container');
-        var menuObj = document.getElementById('theme-menu');
-        if (container && menuObj && !container.contains(e.target)) {
-          menuObj.classList.remove('visible');
-        }
-      });
     }
 
-    function toggleThemeMenu() {
-      var menu = document.getElementById('theme-menu');
-      if (menu) {
-        menu.classList.toggle('visible');
-      }
+    function toggleTheme() {
+      var saved = sessionStorage.getItem('ti');
+      var idx = saved !== null ? parseInt(saved, 10) : 0;
+      var newIdx = idx === 0 ? 1 : 0; // Toggle between 0 (Tennis) and 1 (Robotics)
+      applyThemeFromIndex(newIdx);
     }
 
     function applyThemeFromIndex(idx) {
