@@ -494,8 +494,8 @@ body::before {
   height: 80px;
   border-radius: var(--radius-sm);
   overflow: hidden;
-  border: 1px solid var(--border-light);
-  background: var(--bg);
+  border: 1px solid var(--primary-ghost);
+  background: var(--primary-ghost);
 }
 
 .pub-row-thumb img {
@@ -749,8 +749,8 @@ body::before {
   height: 250px;
   object-fit: contain;
   object-position: center;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border-light);
+  background: var(--primary-ghost);
+  border-bottom: 1px solid var(--primary-ghost);
   padding: 0.5rem;
 }
 
