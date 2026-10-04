@@ -31,8 +31,7 @@
 
 <body>
 
-  <!-- Fixed top accent strip -->
-  <div class="top-strip"></div>
+  <!-- Removed top-strip as requested -->
 
   <!-- Sticky Glassmorphism Navbar -->
   <nav class="navbar">
@@ -41,10 +40,9 @@
       <ul class="nav-items">
         <li><a href="#" id="nav-home" class="active" onclick="showPage('home'); return false;">Home</a></li>
         <li><a href="#" id="nav-research" onclick="showPage('research'); return false;">Research & More</a></li>
-        <li style="position:relative;">
-          <button class="theme-btn" onclick="cycleTheme()" title="Change theme" aria-label="Change color theme"
-            id="theme-btn">🎾</button>
-          <span class="theme-name" id="theme-name"></span>
+        <li class="theme-menu-container" style="position:relative; display: flex; align-items: center;">
+          <button id="theme-btn" class="theme-btn" onclick="toggleThemeMenu()" aria-label="Select color theme" title="Change theme"></button>
+          <div id="theme-menu" class="theme-menu"></div>
         </li>
       </ul>
     </div>
@@ -77,68 +75,154 @@
     // ────────────────────────────────────────
     var THEMES = [
       {
+        id: 'tennis',
         name: 'Tennis',
         icon: '🎾',
+        scrollIcon: '🎾',
         primary: '#2d6a4f', primaryLight: '#40916c', primaryDark: '#1b4332',
         accent: '#d4a843', accentLight: '#e8c96a', accentDim: 'rgba(212,168,67,0.12)',
-        ghost: 'rgba(45,106,79,0.06)', ghostStrong: 'rgba(45,106,79,0.12)',
-        strip: 'linear-gradient(90deg,#1b4332,#2d6a4f,#40916c,#2d6a4f,#1b4332)'
+        ghost: 'rgba(45,106,79,0.08)', ghostStrong: 'rgba(45,106,79,0.15)',
+        strip: 'linear-gradient(90deg,#1b4332,#2d6a4f,#40916c,#2d6a4f,#1b4332)',
+        courtBase: '#255e3c',
+        courtLines: 'linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.4) 10%, rgba(255,255,255,0.4) 10.5%, transparent 10.5%, transparent 89.5%, rgba(255,255,255,0.4) 89.5%, rgba(255,255,255,0.4) 90%, transparent 90%), linear-gradient(transparent 50%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.4) 50.5%, transparent 50.5%)',
+        courtSize: '100% 100%',
+        pageBg: 'rgba(210, 230, 218, 0.95)',
+        cardBg: 'rgba(210, 230, 218, 0.7)'
       },
       {
-        name: 'Swimming',
-        icon: '🏊',
-        primary: '#1565c0', primaryLight: '#42a5f5', primaryDark: '#0d47a1',
-        accent: '#4fc3f7', accentLight: '#81d4fa', accentDim: 'rgba(79,195,247,0.12)',
-        ghost: 'rgba(21,101,192,0.06)', ghostStrong: 'rgba(21,101,192,0.12)',
-        strip: 'linear-gradient(90deg,#0d47a1,#1565c0,#42a5f5,#1565c0,#0d47a1)'
+        id: 'robotics',
+        name: 'Robotics',
+        icon: '🤖',
+        scrollIcon: '🤖',
+        primary: '#3f51b5', primaryLight: '#5c6bc0', primaryDark: '#1a237e',
+        accent: '#00e5ff', accentLight: '#84ffff', accentDim: 'rgba(0,229,255,0.12)',
+        ghost: 'rgba(63,81,181,0.08)', ghostStrong: 'rgba(63,81,181,0.15)',
+        strip: 'linear-gradient(90deg,#1a237e,#3f51b5,#00e5ff,#3f51b5,#1a237e)',
+        courtBase: '#0b0f19',
+        courtLines: 'linear-gradient(rgba(63, 81, 181, 0.3) 1px, transparent 1px), linear-gradient(90deg, rgba(63, 81, 181, 0.3) 1px, transparent 1px)',
+        courtSize: '40px 40px',
+        pageBg: 'rgba(215, 222, 245, 0.95)',
+        cardBg: 'rgba(215, 222, 245, 0.7)'
       },
       {
-        name: 'Cricket',
-        icon: '🏏',
-        primary: '#6d4c2e', primaryLight: '#8d6e4b', primaryDark: '#3e2723',
-        accent: '#c8a96e', accentLight: '#d4b98a', accentDim: 'rgba(200,169,110,0.12)',
-        ghost: 'rgba(109,76,46,0.06)', ghostStrong: 'rgba(109,76,46,0.12)',
-        strip: 'linear-gradient(90deg,#3e2723,#6d4c2e,#8d6e4b,#6d4c2e,#3e2723)'
+        id: 'robotics-manip',
+        name: 'Robotics Manipulation',
+        icon: '🦾',
+        scrollIcon: '⚙️',
+        primary: '#455a64', primaryLight: '#718792', primaryDark: '#1c313a',
+        accent: '#ff9800', accentLight: '#ffc947', accentDim: 'rgba(255,152,0,0.12)',
+        ghost: 'rgba(69,90,100,0.08)', ghostStrong: 'rgba(69,90,100,0.15)',
+        strip: 'linear-gradient(90deg,#1c313a,#455a64,#ff9800,#455a64,#1c313a)',
+        courtBase: '#101518',
+        courtLines: 'radial-gradient(circle at 50% 50%, rgba(255, 152, 0, 0.15) 2px, transparent 2px)',
+        courtSize: '30px 30px',
+        pageBg: 'rgba(218, 224, 228, 0.95)',
+        cardBg: 'rgba(218, 224, 228, 0.7)'
       },
       {
-        name: 'Basketball',
-        icon: '🏀',
-        primary: '#bf5700', primaryLight: '#e07020', primaryDark: '#8b3e00',
-        accent: '#f5a623', accentLight: '#ffc857', accentDim: 'rgba(245,166,35,0.12)',
-        ghost: 'rgba(191,87,0,0.06)', ghostStrong: 'rgba(191,87,0,0.12)',
-        strip: 'linear-gradient(90deg,#8b3e00,#bf5700,#e07020,#bf5700,#8b3e00)'
-      },
-      {
-        name: 'Table Tennis',
-        icon: '🏓',
-        primary: '#283593', primaryLight: '#3f51b5', primaryDark: '#1a237e',
-        accent: '#ef5350', accentLight: '#ff7961', accentDim: 'rgba(239,83,80,0.12)',
-        ghost: 'rgba(40,53,147,0.06)', ghostStrong: 'rgba(40,53,147,0.12)',
-        strip: 'linear-gradient(90deg,#1a237e,#283593,#3f51b5,#283593,#1a237e)'
-      },
-      {
-        name: 'Volleyball',
-        icon: '🏐',
-        primary: '#00838f', primaryLight: '#00acc1', primaryDark: '#006064',
-        accent: '#f9a825', accentLight: '#fdd835', accentDim: 'rgba(249,168,37,0.12)',
-        ghost: 'rgba(0,131,143,0.06)', ghostStrong: 'rgba(0,131,143,0.12)',
-        strip: 'linear-gradient(90deg,#006064,#00838f,#00acc1,#00838f,#006064)'
-      },
-      {
-        name: 'Badminton',
-        icon: '🏸',
-        primary: '#00695c', primaryLight: '#00897b', primaryDark: '#004d40',
-        accent: '#b0bec5', accentLight: '#cfd8dc', accentDim: 'rgba(176,190,197,0.15)',
-        ghost: 'rgba(0,105,92,0.06)', ghostStrong: 'rgba(0,105,92,0.12)',
-        strip: 'linear-gradient(90deg,#004d40,#00695c,#00897b,#00695c,#004d40)'
-      },
-      {
+        id: 'football',
         name: 'Football',
         icon: '⚽',
+        scrollIcon: '⚽',
         primary: '#2e7d32', primaryLight: '#43a047', primaryDark: '#1b5e20',
         accent: '#e0e0e0', accentLight: '#f5f5f5', accentDim: 'rgba(224,224,224,0.18)',
-        ghost: 'rgba(46,125,50,0.06)', ghostStrong: 'rgba(46,125,50,0.12)',
-        strip: 'linear-gradient(90deg,#1b5e20,#2e7d32,#43a047,#2e7d32,#1b5e20)'
+        ghost: 'rgba(46,125,50,0.08)', ghostStrong: 'rgba(46,125,50,0.15)',
+        strip: 'linear-gradient(90deg,#1b5e20,#2e7d32,#43a047,#2e7d32,#1b5e20)',
+        courtBase: '#1b4a22',
+        courtLines: 'repeating-linear-gradient(0deg, transparent, transparent 50px, rgba(255,255,255,0.05) 50px, rgba(255,255,255,0.05) 100px)',
+        courtSize: '100% 100%',
+        pageBg: 'rgba(215, 230, 215, 0.95)',
+        cardBg: 'rgba(215, 230, 215, 0.7)'
+      },
+      {
+        id: 'basketball',
+        name: 'Basketball',
+        icon: '🏀',
+        scrollIcon: '🏀',
+        primary: '#bf5700', primaryLight: '#e07020', primaryDark: '#8b3e00',
+        accent: '#f5a623', accentLight: '#ffc857', accentDim: 'rgba(245,166,35,0.12)',
+        ghost: 'rgba(191,87,0,0.08)', ghostStrong: 'rgba(191,87,0,0.15)',
+        strip: 'linear-gradient(90deg,#8b3e00,#bf5700,#e07020,#bf5700,#8b3e00)',
+        courtBase: '#d98741',
+        courtLines: 'linear-gradient(90deg, transparent 35%, rgba(255,255,255,0.4) 35%, rgba(255,255,255,0.4) 35.5%, transparent 35.5%, transparent 64.5%, rgba(255,255,255,0.4) 64.5%, rgba(255,255,255,0.4) 65%, transparent 65%), linear-gradient(rgba(255,255,255,0.4) 2px, transparent 2px), radial-gradient(circle at 50% 100px, transparent 150px, rgba(255,255,255,0.4) 150px, rgba(255,255,255,0.4) 152px, transparent 152px)',
+        courtSize: '100% 100%',
+        pageBg: 'rgba(240, 225, 208, 0.95)',
+        cardBg: 'rgba(240, 225, 208, 0.7)'
+      },
+      {
+        id: 'swimming',
+        name: 'Swimming',
+        icon: '🏊',
+        scrollIcon: '🏊‍♂️',
+        primary: '#1565c0', primaryLight: '#42a5f5', primaryDark: '#0d47a1',
+        accent: '#4fc3f7', accentLight: '#81d4fa', accentDim: 'rgba(79,195,247,0.12)',
+        ghost: 'rgba(21,101,192,0.08)', ghostStrong: 'rgba(21,101,192,0.15)',
+        strip: 'linear-gradient(90deg,#0d47a1,#1565c0,#42a5f5,#1565c0,#0d47a1)',
+        courtBase: '#0a305e',
+        courtLines: 'linear-gradient(90deg, rgba(255,255,255,0.1) 2px, transparent 2px)',
+        courtSize: '120px 100%',
+        pageBg: 'rgba(205, 232, 248, 0.95)',
+        cardBg: 'rgba(205, 232, 248, 0.7)'
+      },
+      {
+        id: 'cricket',
+        name: 'Cricket',
+        icon: '🏏',
+        scrollIcon: '🔴',
+        primary: '#6d4c2e', primaryLight: '#8d6e4b', primaryDark: '#3e2723',
+        accent: '#c8a96e', accentLight: '#d4b98a', accentDim: 'rgba(200,169,110,0.12)',
+        ghost: 'rgba(109,76,46,0.08)', ghostStrong: 'rgba(109,76,46,0.15)',
+        strip: 'linear-gradient(90deg,#3e2723,#6d4c2e,#8d6e4b,#6d4c2e,#3e2723)',
+        courtBase: '#4a5d23',
+        courtLines: 'radial-gradient(circle at center, rgba(200,169,110,0.2) 30%, transparent 31%)',
+        courtSize: '400px 400px',
+        pageBg: 'rgba(235, 230, 212, 0.95)',
+        cardBg: 'rgba(235, 230, 212, 0.7)'
+      },
+      {
+        id: 'table-tennis',
+        name: 'Table Tennis',
+        icon: '🏓',
+        scrollIcon: '🏓',
+        primary: '#283593', primaryLight: '#3f51b5', primaryDark: '#1a237e',
+        accent: '#ef5350', accentLight: '#ff7961', accentDim: 'rgba(239,83,80,0.12)',
+        ghost: 'rgba(40,53,147,0.08)', ghostStrong: 'rgba(40,53,147,0.15)',
+        strip: 'linear-gradient(90deg,#1a237e,#283593,#3f51b5,#283593,#1a237e)',
+        courtBase: '#1a237e',
+        courtLines: 'linear-gradient(rgba(255,255,255,0.15) 4px, transparent 4px), linear-gradient(90deg, rgba(255,255,255,0.15) 4px, transparent 4px)',
+        courtSize: '50vw 50vh',
+        pageBg: 'rgba(215, 222, 245, 0.95)',
+        cardBg: 'rgba(215, 222, 245, 0.7)'
+      },
+      {
+        id: 'volleyball',
+        name: 'Volleyball',
+        icon: '🏐',
+        scrollIcon: '🏐',
+        primary: '#00838f', primaryLight: '#00acc1', primaryDark: '#006064',
+        accent: '#f9a825', accentLight: '#fdd835', accentDim: 'rgba(249,168,37,0.12)',
+        ghost: 'rgba(0,131,143,0.08)', ghostStrong: 'rgba(0,131,143,0.15)',
+        strip: 'linear-gradient(90deg,#006064,#00838f,#00acc1,#00838f,#006064)',
+        courtBase: '#d48833',
+        courtLines: 'linear-gradient(90deg, rgba(255,255,255,0.2) 2px, transparent 2px)',
+        courtSize: '50% 100%',
+        pageBg: 'rgba(210, 240, 245, 0.95)',
+        cardBg: 'rgba(210, 240, 245, 0.7)'
+      },
+      {
+        id: 'badminton',
+        name: 'Badminton',
+        icon: '🏸',
+        scrollIcon: '🏸',
+        primary: '#00695c', primaryLight: '#00897b', primaryDark: '#004d40',
+        accent: '#b0bec5', accentLight: '#cfd8dc', accentDim: 'rgba(176,190,197,0.15)',
+        ghost: 'rgba(0,105,92,0.08)', ghostStrong: 'rgba(0,105,92,0.15)',
+        strip: 'linear-gradient(90deg,#004d40,#00695c,#00897b,#00695c,#004d40)',
+        courtBase: '#004d40',
+        courtLines: 'linear-gradient(rgba(255,255,255,0.15) 2px, transparent 2px), linear-gradient(90deg, rgba(255,255,255,0.15) 2px, transparent 2px)',
+        courtSize: '150px 80px',
+        pageBg: 'rgba(210, 240, 230, 0.95)',
+        cardBg: 'rgba(210, 240, 230, 0.7)'
       }
     ];
 
@@ -153,25 +237,62 @@
       r.setProperty('--primary-ghost', t.ghost);
       r.setProperty('--primary-ghost-strong', t.ghostStrong);
       r.setProperty('--strip-gradient', t.strip);
+      
+      // New background court variables
+      r.setProperty('--court-base', t.courtBase);
+      r.setProperty('--court-lines', t.courtLines);
+      r.setProperty('--court-size', t.courtSize);
+      r.setProperty('--page-bg', t.pageBg);
+      r.setProperty('--bg-card', t.cardBg);
 
       var btn = document.getElementById('theme-btn');
       if (btn) btn.textContent = t.icon;
-
-      // Theme name tooltip flashing removed as requested
+      
+      var sIcon = document.getElementById('scroll-indicator-icon');
+      if (sIcon) sIcon.textContent = t.scrollIcon;
     }
 
     function initTheme() {
+      var menu = document.getElementById('theme-menu');
+      if (menu && menu.children.length === 0) {
+        THEMES.forEach(function(t, i) {
+          var btn = document.createElement('button');
+          btn.className = 'theme-menu-item';
+          btn.textContent = t.icon;
+          btn.title = t.name;
+          btn.onclick = function() {
+            applyThemeFromIndex(i);
+            toggleThemeMenu();
+          };
+          menu.appendChild(btn);
+        });
+      }
+
       var saved = sessionStorage.getItem('ti');
-      var idx = saved !== null ? parseInt(saved, 10) : Math.floor(Math.random() * THEMES.length);
+      var idx = saved !== null ? parseInt(saved, 10) : 0; // 0 is Tennis
       sessionStorage.setItem('ti', idx);
       applyTheme(THEMES[idx]);
+
+      // Close menu when clicking outside
+      document.addEventListener('click', function(e) {
+        var container = document.querySelector('.theme-menu-container');
+        var menuObj = document.getElementById('theme-menu');
+        if (container && menuObj && !container.contains(e.target)) {
+          menuObj.classList.remove('visible');
+        }
+      });
     }
 
-    function cycleTheme() {
-      var cur = parseInt(sessionStorage.getItem('ti') || '0', 10);
-      var next = (cur + 1) % THEMES.length;
-      sessionStorage.setItem('ti', next);
-      applyTheme(THEMES[next]);
+    function toggleThemeMenu() {
+      var menu = document.getElementById('theme-menu');
+      if (menu) {
+        menu.classList.toggle('visible');
+      }
+    }
+
+    function applyThemeFromIndex(idx) {
+      sessionStorage.setItem('ti', idx);
+      applyTheme(THEMES[idx]);
     }
 
 
@@ -265,8 +386,24 @@
       if (window.location.hash === '#research') {
         showPage('research');
       }
+
+      // SCROLL INDICATOR LOGIC
+      window.addEventListener('scroll', function() {
+        var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        var scrolled = (winScroll / height) * 100;
+        var bar = document.getElementById('scroll-progress-bar');
+        if(bar) bar.style.width = scrolled + '%';
+      });
     });
   </script>
+
+  <!-- SCROLL INDICATOR -->
+  <div id="scroll-progress-container">
+    <div id="scroll-progress-bar">
+      <div id="scroll-indicator-icon"></div>
+    </div>
+  </div>
 
 </body>
 

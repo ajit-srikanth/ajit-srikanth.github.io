@@ -1,93 +1,36 @@
 import re
 
-with open("_layouts/default.html", "r", encoding="utf-8") as f:
+with open('_layouts/default.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
-# Extract everything between <main class="wrapper"> and </main>
-match = re.search(r'(<main class="wrapper">\s*)(.*?)(\s*<!-- Footer -->)', content, re.DOTALL)
-main_content = match.group(2)
+# Make the pageBg tinted
+content = re.sub(r"id: 'robotics',\s*name: 'Robotics',([\s\S]*?)courtSize: '40px 40px'", r"id: 'robotics',\n        name: 'Robotics',\1courtSize: '40px 40px',\n        pageBg: 'rgba(235, 240, 255, 0.92)'", content)
 
-# Create index.html
-index_content = "---\nlayout: default\n---\n" + main_content
+# Tennis
+tennis_lines = "linear-gradient(90deg, transparent 10%, rgba(255,255,255,0.6) 10%, rgba(255,255,255,0.6) 10.5%, transparent 10.5%, transparent 89.5%, rgba(255,255,255,0.6) 89.5%, rgba(255,255,255,0.6) 90%, transparent 90%), linear-gradient(transparent 50%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0.6) 50.5%, transparent 50.5%)"
+content = re.sub(r"id: 'tennis',\s*name: 'Tennis',([\s\S]*?)courtBase: '#1a432b',\s*courtLines: '[^']*',\s*courtSize: '100px 100px'", f"id: 'tennis',\n        name: 'Tennis',\1courtBase: '#255e3c',\n        courtLines: '{tennis_lines}',\n        courtSize: '100% 100%',\n        pageBg: 'rgba(235, 250, 240, 0.92)'", content)
 
-# Now replace the hardcoded publications with the dynamic loop
-pub_loop = """      <!-- Publications -->
-      <section class="section">
-        <h2 class="sec-title" data-aos="fade-up"><span class="dot"></span>Publications</h2>
-        <p class="pub-note" data-aos="fade-up" data-aos-delay="50">* denotes equal contribution &middot; click to expand</p>
-        <div class="pub-list stagger">
-          {% for post in site.posts %}
-            {% if post.categories contains 'research' %}
-            <div class="pub-card" data-aos="fade-up" data-aos-duration="400" data-aos-delay="50">
-              <div class="pub-head" onclick="togglePub(this)">
-                <div class="pub-info">
-                  <div class="title">{{ post.title }}</div>
-                  <div class="venue">{{ post.venue }}</div>
-                </div>
-                <div class="pub-pills">
-                  {% if post.website %}<a href="{{ post.website }}" onclick="event.stopPropagation()"><i data-feather="globe" style="width:11px;height:11px;vertical-align:-1px;margin-right:2px;"></i>site</a>{% endif %}
-                  {% if post.paper %}<a href="{{ post.paper }}" onclick="event.stopPropagation()"><i data-feather="file-text" style="width:11px;height:11px;vertical-align:-1px;margin-right:2px;"></i>paper</a>{% endif %}
-                  {% if post.code %}<a href="{{ post.code }}" onclick="event.stopPropagation()"><i data-feather="github" style="width:11px;height:11px;vertical-align:-1px;margin-right:2px;"></i>code</a>{% endif %}
-                  {% if post.video %}<a href="{{ post.video }}" onclick="event.stopPropagation()"><i data-feather="youtube" style="width:11px;height:11px;vertical-align:-1px;margin-right:2px;"></i>video</a>{% endif %}
-                  {% if post.link %}<a href="{{ post.link }}" onclick="event.stopPropagation()"><i data-feather="link" style="width:11px;height:11px;vertical-align:-1px;margin-right:2px;"></i>link</a>{% endif %}
-                </div>
-                <div class="pub-arrow">▼</div>
-              </div>
-              <div class="pub-body">
-                <div class="authors">{{ post.authors }}</div>
-                <div class="abstract" style="margin-top:0.8rem; font-size:0.85rem; line-height:1.5; color:var(--text-secondary);">
-                  {{ post.content }}
-                </div>
-              </div>
-            </div>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </section>"""
+# Basketball
+bb_lines = "linear-gradient(90deg, transparent 35%, rgba(255,255,255,0.6) 35%, rgba(255,255,255,0.6) 35.5%, transparent 35.5%, transparent 64.5%, rgba(255,255,255,0.6) 64.5%, rgba(255,255,255,0.6) 65%, transparent 65%), linear-gradient(rgba(255,255,255,0.6) 2px, transparent 2px), radial-gradient(circle at 50% 100px, transparent 150px, rgba(255,255,255,0.6) 150px, rgba(255,255,255,0.6) 152px, transparent 152px)"
+content = re.sub(r"id: 'basketball',\s*name: 'Basketball',([\s\S]*?)courtBase: '#7a3100',\s*courtLines: '[^']*',\s*courtSize: '150px 150px'", f"id: 'basketball',\n        name: 'Basketball',\1courtBase: '#d98741',\n        courtLines: '{bb_lines}',\n        courtSize: '100% 100%',\n        pageBg: 'rgba(255, 240, 230, 0.92)'", content)
 
-# Replace the publications section
-index_content = re.sub(r'<!-- Publications -->.*?</section>', pub_loop, index_content, flags=re.DOTALL)
+# Football
+content = re.sub(r"id: 'football',\s*name: 'Football',([\s\S]*?)courtSize: '100% 100%'", r"id: 'football',\n        name: 'Football',\1courtSize: '100% 100%',\n        pageBg: 'rgba(235, 250, 235, 0.92)'", content)
 
-proj_loop = """      <!-- Projects -->
-      <section class="section">
-        <h2 class="sec-title" data-aos="fade-up"><span class="dot"></span>Projects</h2>
-        <div class="proj-grid stagger">
-          {% for post in site.posts %}
-            {% unless post.categories contains 'research' %}
-            <div class="proj-card" data-aos="fade-up" data-aos-duration="400">
-              <img src="{{ site.baseurl }}/tn{{ post.image }}" alt="project image" class="proj-img" />
-              <div class="proj-content">
-                <h3>
-                  {% if post.link %}
-                    <a href="{{ post.link }}">{{ post.title }}</a>
-                  {% else %}
-                    {{ post.title }}
-                  {% endif %}
-                </h3>
-                <div class="proj-links">
-                  {% if post.website %}<a href="{{ post.website }}">site</a>{% endif %}
-                  {% if post.paper %}<a href="{{ post.paper }}">paper</a>{% endif %}
-                  {% if post.code %}<a href="{{ post.code }}">code</a>{% endif %}
-                  {% if post.video %}<a href="{{ post.video }}">video</a>{% endif %}
-                  {% if post.patent %}<a href="{{ post.patent }}">patent</a>{% endif %}
-                </div>
-                <div class="desc">{{ post.content | strip_html | truncatewords: 30 }}</div>
-              </div>
-            </div>
-            {% endunless %}
-          {% endfor %}
-        </div>
-      </section>"""
+# Swimming
+content = re.sub(r"id: 'swimming',\s*name: 'Swimming',([\s\S]*?)courtSize: '120px 100%'", r"id: 'swimming',\n        name: 'Swimming',\1courtSize: '120px 100%',\n        pageBg: 'rgba(230, 245, 255, 0.92)'", content)
 
-index_content = re.sub(r'<!-- Projects -->.*?</section>', proj_loop, index_content, count=1, flags=re.DOTALL)
+# Cricket
+content = re.sub(r"id: 'cricket',\s*name: 'Cricket',([\s\S]*?)courtSize: '400px 400px'", r"id: 'cricket',\n        name: 'Cricket',\1courtSize: '400px 400px',\n        pageBg: 'rgba(250, 240, 230, 0.92)'", content)
 
-with open("index.html", "w", encoding="utf-8") as f:
-    f.write(index_content)
+# Table Tennis
+content = re.sub(r"id: 'table-tennis',\s*name: 'Table Tennis',([\s\S]*?)courtSize: '50vw 50vh'", r"id: 'table-tennis',\n        name: 'Table Tennis',\1courtSize: '50vw 50vh',\n        pageBg: 'rgba(230, 235, 255, 0.92)'", content)
 
-# Update default.html
-layout_content = content.replace(match.group(2), "\n    {{ content }}\n\n")
-# remove layout: default from frontmatter
-layout_content = re.sub(r'^---\nlayout: default\n---\n', '', layout_content)
+# Volleyball
+content = re.sub(r"id: 'volleyball',\s*name: 'Volleyball',([\s\S]*?)courtSize: '50% 100%'", r"id: 'volleyball',\n        name: 'Volleyball',\1courtSize: '50% 100%',\n        pageBg: 'rgba(230, 250, 255, 0.92)'", content)
 
-with open("_layouts/default.html", "w", encoding="utf-8") as f:
-    f.write(layout_content)
+# Badminton
+content = re.sub(r"id: 'badminton',\s*name: 'Badminton',([\s\S]*?)courtSize: '150px 80px'", r"id: 'badminton',\n        name: 'Badminton',\1courtSize: '150px 80px',\n        pageBg: 'rgba(230, 250, 245, 0.92)'", content)
+
+with open('_layouts/default.html', 'w', encoding='utf-8') as f:
+    f.write(content)
